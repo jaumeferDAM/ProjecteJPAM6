@@ -9,6 +9,7 @@ package Model;
  *
  * @author ALUMNEDAM
  */
+@Entity
 public class Alumne {
     
 }
