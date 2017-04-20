@@ -11,4 +11,8 @@ package Model;
  */
 public class UnitatFormativa {
     
+    String id;
+    String nom;
+    String hores;
+    
 }

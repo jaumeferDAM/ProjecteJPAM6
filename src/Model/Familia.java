@@ -5,10 +5,15 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ALUMNEDAM
  */
 public class Familia {
     
+    String id;
+    String nom;
+    ArrayList<Cicle> cicles;
 }

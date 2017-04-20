@@ -7,15 +7,17 @@ public class Alumne {
     String nom;
     String cognom;
     String correu;
-    String matricula;
+    int numero;
 
-    public Alumne(String nif, String nom, String cognom, String correu, String matricula) {
+    public Alumne(String nif, String nom, String cognom, String correu, int numero) {
         this.nif = nif;
         this.nom = nom;
         this.cognom = cognom;
         this.correu = correu;
-        this.matricula = matricula;
+        this.numero = numero;
     }
+
+
 
     public String getNif() {
         return nif;
@@ -49,12 +51,12 @@ public class Alumne {
         this.correu = correu;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
     
     

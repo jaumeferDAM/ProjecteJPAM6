@@ -11,4 +11,7 @@ package Model;
  */
 public class Curs {
     
+    String id;
+    String nom;
+    
 }

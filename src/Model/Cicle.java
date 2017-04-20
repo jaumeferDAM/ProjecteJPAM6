@@ -11,4 +11,8 @@ package Model;
  */
 public class Cicle {
     
+    String id;
+    String nom;
+    String grau;
+    
 }
