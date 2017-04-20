@@ -9,6 +9,6 @@ package Model;
  *
  * @author ALUMNEDAM
  */
-public class Cicle_DAO {
+public class Cicle {
     
 }
