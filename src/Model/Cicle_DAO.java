@@ -9,7 +9,6 @@ package Model;
  *
  * @author ALUMNEDAM
  */
-@Entity
-public class Alumne {
+public class Cicle_DAO {
     
 }
