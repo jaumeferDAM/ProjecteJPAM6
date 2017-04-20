@@ -1,14 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
-/**
- *
- * @author ALUMNEDAM
- */
+import java.util.ArrayList;
+
+
 public class Modul {
+    
+    String id;
+    String nom;
+    ArrayList <UnitatFormativa> llistaUnitatsFormatives;
+
+    public Modul(String id, String nom, ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
+        this.id = id;
+        this.nom = nom;
+        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public ArrayList<UnitatFormativa> getLlistaUnitatsFormatives() {
+        return llistaUnitatsFormatives;
+    }
+
+    public void setLlistaUnitatsFormatives(ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
+        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
+    }
+    
+    
     
 }
