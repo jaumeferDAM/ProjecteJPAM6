@@ -1,33 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Model;
 
 import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- *
- * @author ALUMNEDAM
- */
+@Entity
+@Table(name = "Curs")
 public class Curs {
     
-    String id;
-    String nom;
+    private static final long serialVersionUID = 1L;
+    
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "idCurs", unique = true, nullable = false)
+    private int id;
+    
+    @Column(name = "nomCurs", length = 5)
+    private String nom;
+    
     ArrayList <UnitatFormativa> llistaUNitatsFormatives;
 
-    public Curs(String id, String nom, ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
+    public Curs(int id, String nom, ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
         this.id = id;
         this.nom = nom;
         this.llistaUNitatsFormatives = llistaUNitatsFormatives;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
