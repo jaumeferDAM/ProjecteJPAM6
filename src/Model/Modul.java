@@ -25,8 +25,9 @@ public class Modul implements Serializable{
     @Column(name = "idModul", unique = true, nullable = false)
     private int id;
     
-    @Column(name = "nomModul")
-    String nom;
+    @Column(name = "nomModul", length = 50, nullable = false)
+    private String nom;
+    
     ArrayList <UnitatFormativa> llistaUnitatsFormatives;
 
     public Modul(int id, String nom, ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
@@ -57,6 +58,36 @@ public class Modul implements Serializable{
 
     public void setLlistaUnitatsFormatives(ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
         this.llistaUnitatsFormatives = llistaUnitatsFormatives;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 17 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Modul other = (Modul) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Modul{" + "id=" + id + ", nom=" + nom + ", llistaUnitatsFormatives=" + llistaUnitatsFormatives + '}';
     }
     
     
