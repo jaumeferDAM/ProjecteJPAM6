@@ -24,12 +24,12 @@ public class Curs {
     @Column(name = "nomCurs", length = 5)
     private String nom;
     
-    ArrayList <UnitatFormativa> llistaUNitatsFormatives;
+    ArrayList <UnitatFormativa> llistaUnitatsFormatives;
 
     public Curs(int id, String nom, ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
         this.id = id;
         this.nom = nom;
-        this.llistaUNitatsFormatives = llistaUNitatsFormatives;
+        this.llistaUnitatsFormatives = llistaUNitatsFormatives;
     }
 
     public int getId() {
@@ -49,11 +49,11 @@ public class Curs {
     }
 
     public ArrayList<UnitatFormativa> getLlistaUNitatsFormatives() {
-        return llistaUNitatsFormatives;
+        return llistaUnitatsFormatives;
     }
 
     public void setLlistaUNitatsFormatives(ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
-        this.llistaUNitatsFormatives = llistaUNitatsFormatives;
+        this.llistaUnitatsFormatives = llistaUNitatsFormatives;
     }
     
     
