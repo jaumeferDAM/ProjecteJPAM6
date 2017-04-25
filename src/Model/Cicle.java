@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Cicles")
+@Table(name = "cicles")
 public class Cicle implements Serializable{
     
     private static final long serialVersionUID = 1L;

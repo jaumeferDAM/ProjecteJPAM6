@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Curs")
+@Table(name = "curs")
 public class Curs {
     
     private static final long serialVersionUID = 1L;

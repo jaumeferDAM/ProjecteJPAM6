@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Matricula")
+@Table(name = "matricula")
 public class Matricula {
     
     private static final long serialVersionUID = 1L;

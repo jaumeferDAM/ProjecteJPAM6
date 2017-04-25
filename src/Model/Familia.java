@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 
 @Entity
-@Table(name = "FamiliaCicles")
+@Table(name = "familiaCicles")
 public class Familia {
     
     private static final long serialVersionUID = 1L;
