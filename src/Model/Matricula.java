@@ -7,21 +7,40 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-/**
- *
- * @author ALUMNEDAM
- */
+
+
+@Entity
+@Table(name = "Matricula")
 public class Matricula {
     
-    String id;
-    Alumne alumne;
-    Date data;
-    ArrayList <UnitatFormativa> llistaUnitatsFormatives;
+    private static final long serialVersionUID = 1L;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "idMatricula", unique = true, nullable = false)
+    private int id;
+    
+    
+    private Alumne alumne;
+    private Date data;
+    private ArrayList <UnitatFormativa> llistaUnitatsFormatives;
+    
+    @Column(name = "modalitatMatricula",length = 50, nullable = false)
     String modalitat;
+    
+    @Column(name = "descompteMatricula",length = 50, nullable = false)
     String descompte;
 
-    public Matricula(String id, Alumne alumne, Date data, ArrayList<UnitatFormativa> llistaUnitatsFormatives, String modalitat, String descompte) {
+    public Matricula(int id, Alumne alumne, Date data, ArrayList<UnitatFormativa> llistaUnitatsFormatives, String modalitat, String descompte) {
         this.id = id;
         this.alumne = alumne;
         this.data = data;
@@ -30,11 +49,11 @@ public class Matricula {
         this.descompte = descompte;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
