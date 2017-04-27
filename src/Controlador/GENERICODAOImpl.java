@@ -21,9 +21,14 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
     private final static Logger LOGGER = Logger.getLogger(GENERICODAOImpl.class.getName());
     EntityManagerFactory emf;
     EntityManager em;
+
+    /**
+     *
+     * @return
+     */
     @Override
     public T crear() {
-         emf = Persistence.createEntityManagerFactory("INTERNA");
+         emf = Persistence.createEntityManagerFactory("PROYECTE");
          em = emf.createEntityManager();
         return (T) em;
     }

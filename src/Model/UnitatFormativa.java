@@ -86,5 +86,8 @@ public class UnitatFormativa implements Serializable{
     public String toString() {
         return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + '}';
     }
+
+    public UnitatFormativa() {
+    }
    
 }

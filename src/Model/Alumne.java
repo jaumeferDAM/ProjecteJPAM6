@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Alumne implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "clientId", unique = true, nullable = false)
     private String nif;
     
@@ -38,6 +38,10 @@ public class Alumne implements Serializable{
         this.correu = correu;
         this.telefon = telefon;
     }
+
+    public Alumne() {
+    }
+    
 
 
 

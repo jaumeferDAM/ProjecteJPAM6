@@ -55,6 +55,9 @@ public class Curs {
     public void setLlistaUNitatsFormatives(ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
         this.llistaUnitatsFormatives = llistaUNitatsFormatives;
     }
+
+    public Curs() {
+    }
     
     
 }

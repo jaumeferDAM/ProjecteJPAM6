@@ -88,6 +88,9 @@ public class Familia {
     public String toString() {
         return "Familia{" + "id=" + id + ", nom=" + nom + ", cicles=" + cicles + '}';
     }
+
+    public Familia() {
+    }
     
 
 }

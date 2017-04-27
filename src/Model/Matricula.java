@@ -96,6 +96,9 @@ public class Matricula {
     public void setDescompte(String descompte) {
         this.descompte = descompte;
     }
+
+    public Matricula() {
+    }
     
     
     

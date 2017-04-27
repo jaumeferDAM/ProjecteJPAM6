@@ -89,6 +89,9 @@ public class Modul implements Serializable{
     public String toString() {
         return "Modul{" + "id=" + id + ", nom=" + nom + ", llistaUnitatsFormatives=" + llistaUnitatsFormatives + '}';
     }
+
+    public Modul() {
+    }
     
     
     

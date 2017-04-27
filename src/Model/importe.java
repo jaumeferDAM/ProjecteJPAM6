@@ -74,6 +74,9 @@ public class importe implements Serializable{
     public String toString() {
         return "importe{" + "matricula=" + matricula + ", importe=" + importe + '}';
     }
+
+    public importe() {
+    }
     
     
     

@@ -105,6 +105,10 @@ public class Cicle implements Serializable{
         return true;
     }
 
+    public Cicle() {
+    }
+    
+
     @Override
     public String toString() {
         return "Cicle{" + "id=" + id + ", nom=" + nom + ", grau=" + grau + ", llistaModuls=" + llistaModuls + ", llistaCursos=" + llistaCursos + '}';
