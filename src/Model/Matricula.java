@@ -40,11 +40,10 @@ public class Matricula {
     @Column(name = "descompteMatricula",length = 50, nullable = false)
     String descompte;
 
-    public Matricula(int id, Alumne alumne, Date data, ArrayList<UnitatFormativa> llistaUnitatsFormatives, String modalitat, String descompte) {
+    public Matricula(int id, Alumne alumne, Date data, String modalitat, String descompte) {
         this.id = id;
         this.alumne = alumne;
         this.data = data;
-        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
         this.modalitat = modalitat;
         this.descompte = descompte;
     }

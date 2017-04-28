@@ -26,10 +26,9 @@ public class Curs {
     
     ArrayList <UnitatFormativa> llistaUnitatsFormatives;
 
-    public Curs(int id, String nom, ArrayList<UnitatFormativa> llistaUNitatsFormatives) {
+    public Curs(int id, String nom) {
         this.id = id;
         this.nom = nom;
-        this.llistaUnitatsFormatives = llistaUNitatsFormatives;
     }
 
     public int getId() {

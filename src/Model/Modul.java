@@ -30,10 +30,9 @@ public class Modul implements Serializable{
     
     ArrayList <UnitatFormativa> llistaUnitatsFormatives;
 
-    public Modul(int id, String nom, ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
+    public Modul(int id, String nom) {
         this.id = id;
         this.nom = nom;
-        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
     }
 
     public int getId() {

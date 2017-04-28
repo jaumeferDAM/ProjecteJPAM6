@@ -29,10 +29,9 @@ public class Familia {
     
     ArrayList<Cicle> cicles;
 
-    public Familia(Long id, String nom, ArrayList<Cicle> cicles) {
+    public Familia(Long id, String nom) {
         this.id = id;
         this.nom = nom;
-        this.cicles = cicles;
     }
 
     public Long getId() {

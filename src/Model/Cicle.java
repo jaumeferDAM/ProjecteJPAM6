@@ -32,12 +32,10 @@ public class Cicle implements Serializable{
     private ArrayList<Modul> llistaModuls;
     private ArrayList<Curs> llistaCursos;
 
-    public Cicle(int id, String nom, String grau, ArrayList<Modul> llistaModuls, ArrayList<Curs> llistaCursos) {
+    public Cicle(int id, String nom, String grau) {
         this.id = id;
         this.nom = nom;
         this.grau = grau;
-        this.llistaModuls = llistaModuls;
-        this.llistaCursos = llistaCursos;
     }
 
     public int getId() {
