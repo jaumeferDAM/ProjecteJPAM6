@@ -11,5 +11,5 @@ import java.util.ArrayList;
      void actualizar(T entity);
      T get(ID id);
      void eliminar(ID id);
-     ArrayList<T> listarTodos();
+     ArrayList<T> listarTodos(String s);
 }

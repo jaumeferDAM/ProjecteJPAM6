@@ -5,13 +5,16 @@
  */
 package Controlador;
 
+import Model.Alumne;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import org.hibernate.SessionFactory;
 
 public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<T, ID> {
@@ -101,7 +104,22 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
      */
     @Override
     public void eliminar(ID id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // El persistim a la base de dades
+        //em.getTransaction().begin();
+        EntityTransaction etx = em.getTransaction();
+
+        System.out.println("begin");
+        etx.begin();
+
+        System.out.println("remove");
+        em.remove(em.contains(id) ? id : em.merge(id));
+
+        System.out.println("commit");
+        //em.getTransaction().commit();
+        etx.commit();
+
+        System.out.println("close");
+        em.close();
     }
 
     /**
@@ -110,8 +128,34 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
      * @return
      */
     @Override
-    public ArrayList<T> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<T> listarTodos(String s) {
+
+        System.out.println("busqueda");
+            Query query = em.createNamedQuery("FROM " + s);
+        List<> p = (List<>) query.getResultList();
+//        Polissa a = (Polissa) em.find(Polissa.class, id);
+
+        System.out.println("close");
+        em.close();
+
+        return (ArrayList<T>) p;
+    }
+
+    T buscarPorNif(String nif) {
+      EntityTransaction etx = em.getTransaction();
+      
+      
+
+        System.out.println("busqueda");
+//        Query query = em.createNamedQuery("Persona.personesPerCognom",Persona.class);
+//        query.setParameter("nombre", "Jorge");
+//        Persona p = (Persona) query.getSingleResult();
+        T t = (T) em.find(Alumne.class, nif);
+
+        System.out.println("close");
+        em.close();
+
+        return t;
     }
 
 }

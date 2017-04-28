@@ -14,6 +14,8 @@ public class ProyectoM6UF4 {
         Alumne alumne1 = new Alumne("111111", "nom", "cognom", "correu", 555555);
         alumneDAO.crear();
         alumneDAO.insertar(alumne1);
+        alumneDAO.actualizar(new Alumne("111111", "Juan", "Alberto", "correu", 555555));
+//        alumneDAO.eliminar(alumne1);
     }
     
 }

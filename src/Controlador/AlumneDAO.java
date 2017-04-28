@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Model.Alumne;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -15,8 +16,8 @@ import java.util.ArrayList;
 public class AlumneDAO extends GENERICODAOImpl<Object, Serializable>{
 
     @Override
-    public ArrayList<Object> listarTodos() {
-        return super.listarTodos(); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Object> listarTodos(String s) {
+        return super.listarTodos(s); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -42,6 +43,16 @@ public class AlumneDAO extends GENERICODAOImpl<Object, Serializable>{
     @Override
     public Object crear() {
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    /**
+     *
+     * @param nif
+     * @return 
+     */
+    @Override
+    public Alumne buscarPorNif(String nif) {
+     return (Alumne) super.buscarPorNif(nif);
     }
     
 }

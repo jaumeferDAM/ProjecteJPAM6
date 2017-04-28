@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class Modul_Controlador extends GENERICODAOImpl<Object, Serializable>{
 
     @Override
-    public ArrayList<Object> listarTodos() {
-        return super.listarTodos(); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Object> listarTodos(String s) {
+        return super.listarTodos(s); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
