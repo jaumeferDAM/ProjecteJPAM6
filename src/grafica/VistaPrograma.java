@@ -606,7 +606,7 @@ public class VistaPrograma extends javax.swing.JFrame {
     
     
     private void btnCrearMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatriculaActionPerformed
-        // TODO add your handling code here:
+        Matricula matricula = new Matricula();
     }//GEN-LAST:event_btnCrearMatriculaActionPerformed
 
     private void btnModificarMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMatriculaActionPerformed
@@ -659,7 +659,7 @@ public class VistaPrograma extends javax.swing.JFrame {
     
     
     private void btnCrearFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearFamiliaActionPerformed
-        // TODO add your handling code here:
+        Familia familia = new Familia(0L, campNomFamilia.getText());
     }//GEN-LAST:event_btnCrearFamiliaActionPerformed
 
     private void btnModificarFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarFamiliaActionPerformed
