@@ -23,16 +23,22 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
     EntityManager em;
 
     /**
+     * Inicializar la entityManagerFactory y EntityManager;
      *
      * @return
      */
     @Override
     public T crear() {
-         emf = Persistence.createEntityManagerFactory("PROYECTE");
-         em = emf.createEntityManager();
+        emf = Persistence.createEntityManagerFactory("PROYECTE");
+        em = emf.createEntityManager();
         return (T) em;
     }
 
+    /**
+     * Inserta una entidad en la tabla de la base de datos
+     *
+     * @param entity
+     */
     @Override
     public void insertar(T entity) {
         // Recupera el entity manager
@@ -54,24 +60,58 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
         em.close();
     }
 
-@Override
-        public void actualizar(T entity) {
+    /**
+     * Modifica una fila en la tabla de la base de datos.
+     *
+     * @param entity
+     */
+    @Override
+    public void actualizar(T entity) {
+        EntityTransaction etx = em.getTransaction();
+
+        System.out.println("begin");
+        etx.begin();
+
+        System.out.println("merge");
+        em.merge(entity);
+
+        System.out.println("commit");
+        //em.getTransaction().commit();
+        etx.commit();
+
+        System.out.println("close");
+        em.close();
+    }
+
+    /**
+     * return id
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public T get(ID id) {
+        return (T) id;
+    }
+
+    /**
+     * Elimina una fila(entidad) en la tabla de la base de datos.
+     *
+     * @param id
+     */
+    @Override
+    public void eliminar(ID id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * Lista todas las filas en la tabla de la base de datos
+     *
+     * @return
+     */
     @Override
-        public T get(ID id) {
+    public ArrayList<T> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-        public void eliminar(ID id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-        public ArrayList<T> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
