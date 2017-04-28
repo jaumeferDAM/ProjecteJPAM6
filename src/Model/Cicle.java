@@ -3,6 +3,7 @@ package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Cicle implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "idCicle", nullable = false, unique = true)
-    int id;
+    Long id;
     
     @Column(name = "nomCicle", length = 50, nullable = false)
     private String nom;
@@ -32,17 +33,17 @@ public class Cicle implements Serializable{
     private ArrayList<Modul> llistaModuls;
     private ArrayList<Curs> llistaCursos;
 
-    public Cicle(int id, String nom, String grau) {
+    public Cicle(Long id, String nom, String grau) {
         this.id = id;
         this.nom = nom;
         this.grau = grau;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -81,7 +82,7 @@ public class Cicle implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + this.id;
+        hash = 89 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -97,11 +98,15 @@ public class Cicle implements Serializable{
             return false;
         }
         final Cicle other = (Cicle) obj;
-        if (this.id != other.id) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
+
+    
+    
+ 
 
     public Cicle() {
     }

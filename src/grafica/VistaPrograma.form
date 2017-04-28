@@ -86,9 +86,9 @@
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton6" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton12" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnEliminarCicle" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnCrearCicle" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnModificarCicle" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="311" max="32767" attributes="0"/>
                   </Group>
@@ -100,9 +100,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton5" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCrearCicle" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton12" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnModificarCicle" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -117,7 +117,7 @@
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnEliminarCicle" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace pref="373" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -138,20 +138,29 @@
                 <Property name="text" type="java.lang.String" value="Grau: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="btnCrearCicle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearCicleActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="btnEliminarCicle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarCicleActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton12">
+            <Component class="javax.swing.JButton" name="btnModificarCicle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarCicleActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -202,9 +211,9 @@
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton11" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton10" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton13" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnEliminarFamilia" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnCrearFamilia" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnModificarFamilia" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="306" max="32767" attributes="0"/>
                   </Group>
@@ -215,7 +224,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton10" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnCrearFamilia" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="campIdFamilia" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
@@ -224,7 +233,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton13" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="btnModificarFamilia" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -237,7 +246,7 @@
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton11" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnEliminarFamilia" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace pref="375" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -258,20 +267,29 @@
                 <Property name="text" type="java.lang.String" value="Nom: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton10">
+            <Component class="javax.swing.JButton" name="btnCrearFamilia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearFamiliaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton11">
+            <Component class="javax.swing.JButton" name="btnEliminarFamilia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarFamiliaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton13">
+            <Component class="javax.swing.JButton" name="btnModificarFamilia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarFamiliaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -351,9 +369,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton3" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jButton14" min="-2" pref="124" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Component id="btnEliminarAlumne" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Component id="btnModificarAlumne" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Component id="btnCrearAlumne" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -372,8 +390,8 @@
                                       <Component id="campCercaAlumnes" min="-2" pref="141" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnCercaTots" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Component id="btnCercaTotsAl" min="-2" pref="124" max="-2" attributes="0"/>
+                                          <Component id="btnCercarAlumne" min="-2" pref="124" max="-2" attributes="0"/>
+                                          <Component id="btnCercarTotsAlumne" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -432,15 +450,15 @@
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCrearAlumne" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton14" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnModificarAlumne" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnEliminarAlumne" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="btnCercaTots" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCercarAlumne" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnCercaTotsAl" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCercarTotsAlumne" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -484,37 +502,46 @@
                 <Property name="text" type="java.lang.String" value="Telefon: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnCrearAlumne">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearAlumneActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnEliminarAlumne">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarAlumneActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton14">
+            <Component class="javax.swing.JButton" name="btnModificarAlumne">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarAlumneActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="campCercaAlumnes">
             </Component>
-            <Component class="javax.swing.JButton" name="btnCercaTots">
+            <Component class="javax.swing.JButton" name="btnCercarAlumne">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerca"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCercaTotsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCercarAlumneActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCercaTotsAl">
+            <Component class="javax.swing.JButton" name="btnCercarTotsAlumne">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerca Tots"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCercaTotsAlActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCercarTotsAlumneActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -588,10 +615,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton8" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton7" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton9" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jButton15" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnEliminarMatricula" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnCrearMatricula" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnCercarMatricula" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="btnModificarMatricula" min="-2" pref="124" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="263" max="32767" attributes="0"/>
                   </Group>
@@ -603,13 +630,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButton7" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCrearMatricula" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="jButton15" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnModificarMatricula" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnEliminarMatricula" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton9" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="btnCercarMatricula" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -667,25 +694,37 @@
                 <Property name="text" type="java.lang.String" value="Descompte: "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="btnCrearMatricula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearMatriculaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="btnEliminarMatricula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarMatriculaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton9">
+            <Component class="javax.swing.JButton" name="btnCercarMatricula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cercar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCercarMatriculaActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton15">
+            <Component class="javax.swing.JButton" name="btnModificarMatricula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarMatriculaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
