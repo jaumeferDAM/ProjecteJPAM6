@@ -36,5 +36,10 @@ public class Matricula_Controlador extends GENERICODAOImpl<Object, Serializable>
     public Object crear() {
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    Object buscarPorClave(String cod) {
+        return super.buscarPorClave(cod); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

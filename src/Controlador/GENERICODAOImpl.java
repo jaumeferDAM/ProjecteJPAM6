@@ -123,25 +123,26 @@ public class GENERICODAOImpl<T, ID extends Serializable> implements GENERICODAO<
     }
 
     /**
-     * Lista todas las filas en la tabla de la base de datos
+     * Lista todas las filas en la tabla de la base de datos.
      *
+     * @param s
      * @return
      */
     @Override
     public ArrayList<T> listarTodos(String s) {
 
         System.out.println("busqueda");
-            Query query = em.createNamedQuery("FROM " + s);
-        List<> p = (List<>) query.getResultList();
+            Query q = em.createNamedQuery("FROM " + s);
+        List<T> lista = (List<T>) q.getResultList();
 //        Polissa a = (Polissa) em.find(Polissa.class, id);
 
         System.out.println("close");
         em.close();
 
-        return (ArrayList<T>) p;
+        return (ArrayList<T>) lista;
     }
 
-    T buscarPorNif(String nif) {
+    T buscarPorClave(String nif) {
       EntityTransaction etx = em.getTransaction();
       
       

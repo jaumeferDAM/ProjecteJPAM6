@@ -51,8 +51,8 @@ public class AlumneDAO extends GENERICODAOImpl<Object, Serializable>{
      * @return 
      */
     @Override
-    public Alumne buscarPorNif(String nif) {
-     return (Alumne) super.buscarPorNif(nif);
+    public Alumne buscarPorClave(String nif) {
+     return (Alumne) super.buscarPorClave(nif);
     }
     
 }

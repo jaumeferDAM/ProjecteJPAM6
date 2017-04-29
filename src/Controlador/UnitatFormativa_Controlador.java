@@ -36,5 +36,10 @@ public class UnitatFormativa_Controlador extends GENERICODAOImpl<Object, Seriali
     public Object crear() {
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    Object buscarPorClave(String clave) {
+        return super.buscarPorClave(clave); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

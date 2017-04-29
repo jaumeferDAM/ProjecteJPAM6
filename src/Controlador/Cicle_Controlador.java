@@ -36,5 +36,10 @@ public class Cicle_Controlador extends GENERICODAOImpl<Object, Serializable>{
     public Object crear() {
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    Object buscarPorClave(String nif) {
+        return super.buscarPorClave(nif); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
