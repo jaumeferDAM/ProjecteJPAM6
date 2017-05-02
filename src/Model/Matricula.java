@@ -6,6 +6,7 @@
 package Model;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "matricula")
-public class Matricula {
+public class Matricula implements Serializable{
     
     private static final long serialVersionUID = 1L;
     

@@ -22,7 +22,7 @@ public class Curs {
     
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCurs", unique = true, nullable = false)
     private Long id;
     
@@ -35,6 +35,9 @@ public class Curs {
     @ManyToOne
     @JoinColumn(name = "idCicle")
     private Cicle cicle;
+    
+    @OneToMany (mappedBy = "curs")
+    private List<Modul> llistaModuls;
 
     public Curs(Long id, String nom, Cicle cicle) {
         this.id = id;
@@ -77,10 +80,18 @@ public class Curs {
         this.cicle = cicle;
     }
 
+    public List<Modul> getLlistaModuls() {
+        return llistaModuls;
+    }
+
+    public void setLlistaModuls(List<Modul> llistaModuls) {
+        this.llistaModuls = llistaModuls;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 19 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -104,11 +115,9 @@ public class Curs {
 
     @Override
     public String toString() {
-        return "Curs{" + "id=" + id + ", nom=" + nom + ", listaUF=" + listaUF + ", cicle=" + cicle + '}';
+        return "Curs{" + "id=" + id + ", nom=" + nom + ", listaUF=" + listaUF + ", cicle=" + cicle + ", llistaModuls=" + llistaModuls + '}';
     }
 
-    
-    
-    
+
     
 }
