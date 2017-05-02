@@ -8,10 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+//@NamedQueries({
+//@NamedQuery(name="alumneCognom", query="SELECT p FROM Alumne p WHERE p.cognom=:cognom")})
 @Table(name = "alumnes")
 public class Alumne implements Serializable{
     
