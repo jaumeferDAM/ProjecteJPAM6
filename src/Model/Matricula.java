@@ -5,7 +5,6 @@
  */
 package Model;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -49,12 +48,12 @@ public class Matricula implements Serializable{
     private String descompte;
     
     @OneToOne(mappedBy = "matricula")
-    private Import idImport;
+    private importe idImport;
     
     @ManyToMany(mappedBy = "listaMatriculas")
     private List<UnitatFormativa> llistaUF;
 
-    public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, Import idImport) {
+    public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, importe idImport) {
         this.id = id;
         this.idAlumne = idAlumne;
         this.data = data;
@@ -107,11 +106,11 @@ public class Matricula implements Serializable{
         this.descompte = descompte;
     }
 
-    public Import getIdImport() {
+    public importe getIdImport() {
         return idImport;
     }
 
-    public void setIdImport(Import idImport) {
+    public void setIdImport(importe idImport) {
         this.idImport = idImport;
     }
 
