@@ -8,6 +8,7 @@ package Controlador;
 import Model.Alumne;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.Query;
 
 /**
  *
@@ -45,14 +46,14 @@ public class Alumne_Controlador extends GENERICODAOImpl<Object, Serializable>{
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
     
-    /**
-     *
-     * @param nif
-     * @return 
-     */
-    @Override
-    public Alumne buscarPorClave(String nif) {
-     return (Alumne) super.buscarPorClave(nif);
-    }
+    public Alumne buscarCognom(String cognom) {
+        // Recupera el entity manager       
+        Query query = em.createNamedQuery("alumneCognom", Alumne.class);
+        query.setParameter("cognom", cognom);
+        Alumne p = (Alumne) query.getSingleResult();
+        System.out.println("close");
+        em.close();
+        return p;
+}
     
 }

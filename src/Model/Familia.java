@@ -1,6 +1,7 @@
 
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -11,12 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 @Entity
 @Table(name = "familiaCicles")
-public class Familia {
+@NamedQueries({
+@NamedQuery(name="familiaId", query="SELECT f FROM familiaCicles f WHERE f.id=:id")})
+public class Familia implements Serializable {
     
     private static final long serialVersionUID = 1L;
     

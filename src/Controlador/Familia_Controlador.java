@@ -1,8 +1,11 @@
 
 package Controlador;
 
+import Model.Cicle;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Query;
 
 
 public class Familia_Controlador extends GENERICODAOImpl<Object, Serializable>{
@@ -36,5 +39,16 @@ public class Familia_Controlador extends GENERICODAOImpl<Object, Serializable>{
     public Object crear() {
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
+    
+        
+    public List<Cicle> BuscarPerFamilia(Long id) {
+      
+        System.out.println("Busqueda per id");
+        Query query = em.createNamedQuery("cercaCiclesFamilia", Cicle.class);
+        query.setParameter("id", id);
+        List<Cicle> p = (List<Cicle>) query.getResultList();
+        System.out.println(p.size());
+        return p;
+}
     
 }
