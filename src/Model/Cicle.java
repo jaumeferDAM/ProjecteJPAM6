@@ -3,12 +3,16 @@ package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -22,7 +26,7 @@ public class Cicle implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "idCicle", nullable = false, unique = true)
-    Long id;
+    private Long id;
     
     @Column(name = "nomCicle", length = 50, nullable = false)
     private String nom;
@@ -30,13 +34,22 @@ public class Cicle implements Serializable{
     @Column(name = "grauCicle", length = 50)
     private String grau;
     
-    private ArrayList<Modul> llistaModuls;
-    private ArrayList<Curs> llistaCursos;
+    @OneToMany(mappedBy="cicle")
+    private List<Modul> llistaModuls;
+    
+    @OneToMany(mappedBy="cicle")
+    private List<Curs> llistaCursos;
+    
+    @ManyToOne
+    @JoinColumn(name = "idFamilia")
+    private Familia familia;
+    
 
-    public Cicle(Long id, String nom, String grau) {
+    public Cicle(Long id, String nom, String grau, Familia familia) {
         this.id = id;
         this.nom = nom;
         this.grau = grau;
+        this.familia = familia;
     }
 
     public Long getId() {
@@ -63,26 +76,34 @@ public class Cicle implements Serializable{
         this.grau = grau;
     }
 
-    public ArrayList<Modul> getLlistaModuls() {
+    public List<Modul> getLlistaModuls() {
         return llistaModuls;
     }
 
-    public void setLlistaModuls(ArrayList<Modul> llistaModuls) {
+    public void setLlistaModuls(List<Modul> llistaModuls) {
         this.llistaModuls = llistaModuls;
     }
 
-    public ArrayList<Curs> getLlistaCursos() {
+    public List<Curs> getLlistaCursos() {
         return llistaCursos;
     }
 
-    public void setLlistaCursos(ArrayList<Curs> llistaCursos) {
+    public void setLlistaCursos(List<Curs> llistaCursos) {
         this.llistaCursos = llistaCursos;
+    }
+
+    public Familia getFamilia() {
+        return familia;
+    }
+
+    public void setFamilia(Familia familia) {
+        this.familia = familia;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 29 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -106,16 +127,19 @@ public class Cicle implements Serializable{
 
     
     
+    
  
 
     public Cicle() {
     }
-    
 
     @Override
     public String toString() {
-        return "Cicle{" + "id=" + id + ", nom=" + nom + ", grau=" + grau + ", llistaModuls=" + llistaModuls + ", llistaCursos=" + llistaCursos + '}';
+        return "Cicle{" + "id=" + id + ", nom=" + nom + ", grau=" + grau + ", llistaModuls=" + llistaModuls + ", llistaCursos=" + llistaCursos + ", familia=" + familia + '}';
     }
+    
+
+    
     
     
 }

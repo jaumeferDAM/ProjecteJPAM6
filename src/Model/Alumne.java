@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +16,6 @@ import javax.persistence.Table;
 public class Alumne implements Serializable{
     
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "clientId", unique = true, nullable = false)
     private String nif;
     
@@ -30,6 +30,9 @@ public class Alumne implements Serializable{
     
     @Column(name = "telefon", length = 11)
     private int telefon;
+    
+    @OneToOne(mappedBy = "")
+    private Matricula idMatricula;
 
     public Alumne(String nif, String nom, String cognom, String correu, int telefon) {
         this.nif = nif;
@@ -87,8 +90,8 @@ public class Alumne implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.nif);
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.nif);
         return hash;
     }
 
@@ -109,14 +112,12 @@ public class Alumne implements Serializable{
         }
         return true;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "Alumne{" + "id=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + '}';
+        return "Alumne{" + "nif=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + ", idMatricula=" + idMatricula + '}';
     }
-    
+
     
     
 }
