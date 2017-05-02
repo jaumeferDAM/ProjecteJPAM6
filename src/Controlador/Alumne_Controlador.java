@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author ALUMNEDAM
  */
-public class AlumneDAO extends GENERICODAOImpl<Object, Serializable>{
+public class Alumne_Controlador extends GENERICODAOImpl<Object, Serializable>{
 
     @Override
     public ArrayList<Object> listarTodos(String s) {

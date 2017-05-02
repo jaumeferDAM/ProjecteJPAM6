@@ -643,7 +643,7 @@ public class VistaPrograma extends javax.swing.JFrame {
     
     
     private void btnCrearCicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCicleActionPerformed
-        Cicle cicle = new Cicle(0L, campNomCicle.getText(), campGrauCicle.getText());
+        //Cicle cicle = new Cicle(0L, campNomCicle.getText(), campGrauCicle.getText());
     }//GEN-LAST:event_btnCrearCicleActionPerformed
 
     private void btnModificarCicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarCicleActionPerformed
