@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -27,7 +29,8 @@ public class Familia {
     private String nom;
     
     
-    ArrayList<Cicle> cicles;
+    @OneToMany(mappedBy = "familia")
+    private List<Cicle> llistaCicles;
 
     public Familia(Long id, String nom) {
         this.id = id;
@@ -50,18 +53,18 @@ public class Familia {
         this.nom = nom;
     }
 
-    public ArrayList<Cicle> getCicles() {
-        return cicles;
+    public List<Cicle> getLlistaCicles() {
+        return llistaCicles;
     }
 
-    public void setCicles(ArrayList<Cicle> cicles) {
-        this.cicles = cicles;
+    public void setLlistaCicles(List<Cicle> llistaCicles) {
+        this.llistaCicles = llistaCicles;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.id);
+        hash = 17 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -85,8 +88,11 @@ public class Familia {
 
     @Override
     public String toString() {
-        return "Familia{" + "id=" + id + ", nom=" + nom + ", cicles=" + cicles + '}';
+        return "Familia{" + "id=" + id + ", nom=" + nom + ", llistaCicles=" + llistaCicles + '}';
     }
+
+    
+    
 
     public Familia() {
     }

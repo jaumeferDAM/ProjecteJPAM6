@@ -2,11 +2,14 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,15 +21,31 @@ public class importe implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idImport", unique = true, nullable = false)
-    private int matricula;
+    private Long id;
 
+   
     @Column(name = "import", nullable = false)
     private double importe;
     
-    
-    public importe(double importe, int matricula) {
+    @OneToOne
+    @JoinColumn(name = "matriculaId")
+    private Matricula matricula;
+
+    public importe(Long id, double importe, Matricula matricula) {
+        this.id = id;
         this.importe = importe;
         this.matricula = matricula;
+    }
+        
+    public importe() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public double getImporte() {
@@ -37,18 +56,18 @@ public class importe implements Serializable{
         this.importe = importe;
     }
 
-    public int getMatricula() {
+    public Matricula getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(Matricula matricula) {
         this.matricula = matricula;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 83 * hash + this.matricula;
+        hash = 97 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -64,19 +83,21 @@ public class importe implements Serializable{
             return false;
         }
         final importe other = (importe) obj;
-        if (this.matricula != other.matricula) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
 
+    
+    
     @Override
     public String toString() {
-        return "importe{" + "matricula=" + matricula + ", importe=" + importe + '}';
+        return "importe{" + "id=" + id + ", importe=" + importe + ", matricula=" + matricula + '}';
     }
-
-    public importe() {
-    }
+    
+    
+    
     
     
     

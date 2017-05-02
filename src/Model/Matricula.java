@@ -5,15 +5,21 @@
  */
 package Model;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -27,41 +33,53 @@ public class Matricula {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "idMatricula", unique = true, nullable = false)
-    private int id;
+    private Long id;
     
-    
-    private Alumne alumne;
-    private Date data;
-    private ArrayList <UnitatFormativa> llistaUnitatsFormatives;
-    
-    @Column(name = "modalitatMatricula",length = 50, nullable = false)
-    String modalitat;
-    
-    @Column(name = "descompteMatricula",length = 50, nullable = false)
-    String descompte;
+    @OneToOne
+    @JoinColumn(name = "alumneId")
+    private Alumne idAlumne;
 
-    public Matricula(int id, Alumne alumne, Date data, String modalitat, String descompte) {
+    private Date data;
+
+    @Column(name = "modalitat", length = 50, nullable = false)
+    private String modalitat;
+
+    @Column(name = "descompte", length = 50, nullable = false)
+    private String descompte;
+    
+    @OneToOne(mappedBy = "matricula")
+    private Import idImport;
+    
+    @ManyToMany(mappedBy = "listaMatriculas")
+    private List<UnitatFormativa> llistaUF;
+
+    public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, Import idImport) {
         this.id = id;
-        this.alumne = alumne;
+        this.idAlumne = idAlumne;
         this.data = data;
         this.modalitat = modalitat;
         this.descompte = descompte;
+        this.idImport = idImport;
+    }
+    
+    
+    public Matricula() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Alumne getAlumne() {
-        return alumne;
+    public Alumne getIdAlumne() {
+        return idAlumne;
     }
 
-    public void setAlumne(Alumne alumne) {
-        this.alumne = alumne;
+    public void setIdAlumne(Alumne idAlumne) {
+        this.idAlumne = idAlumne;
     }
 
     public Date getData() {
@@ -70,14 +88,6 @@ public class Matricula {
 
     public void setData(Date data) {
         this.data = data;
-    }
-
-    public ArrayList<UnitatFormativa> getLlistaUnitatsFormatives() {
-        return llistaUnitatsFormatives;
-    }
-
-    public void setLlistaUnitatsFormatives(ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
-        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
     }
 
     public String getModalitat() {
@@ -96,10 +106,52 @@ public class Matricula {
         this.descompte = descompte;
     }
 
-    public Matricula() {
+    public Import getIdImport() {
+        return idImport;
     }
-    
-    
-    
+
+    public void setIdImport(Import idImport) {
+        this.idImport = idImport;
+    }
+
+    public List<UnitatFormativa> getLlistaUF() {
+        return llistaUF;
+    }
+
+    public void setLlistaUF(List<UnitatFormativa> llistaUF) {
+        this.llistaUF = llistaUF;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Matricula other = (Matricula) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Matricula{" + "id=" + id + ", idAlumne=" + idAlumne + ", data=" + data + ", modalitat=" + modalitat + ", descompte=" + descompte + ", idImport=" + idImport + ", llistaUF=" + llistaUF + '}';
+    }
+
+
     
 }

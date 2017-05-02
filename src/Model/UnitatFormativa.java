@@ -2,15 +2,20 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "unitatsFormatives")
+@Table(name = "unitatFormativa")
 public class UnitatFormativa implements Serializable{
     
     
@@ -19,25 +24,42 @@ public class UnitatFormativa implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUnitatFormativa", unique = true, nullable = false)
-    private int id;
+    private Long id;
     
-    @Column(name = "nomUnitatFormativa", length = 50, nullable = false)
+    @Column(name = "nomUnitatFormativa", nullable = false)
     private String nom;
     
-    @Column(name = "horesUnitatFormativa", length = 50, nullable = false)
+    @Column(name = "horesUnitatFormativa", nullable = false)
     private String hores;
 
-    public UnitatFormativa(int id, String nom, String hores) {
+    @ManyToMany
+    private List<Matricula> llistaMatriculas;
+
+    @ManyToOne
+    @JoinColumn(name = "idCurs")
+    private Curs idCurs;
+
+    @ManyToOne
+    @JoinColumn(name = "idModul")
+    private Modul idModul;
+
+    public UnitatFormativa(Long id, String nom, String hores, Curs idCurs, Modul idModul) {
         this.id = id;
         this.nom = nom;
         this.hores = hores;
+        this.idCurs = idCurs;
+        this.idModul = idModul;
+    }
+    
+    
+    public UnitatFormativa() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,10 +79,34 @@ public class UnitatFormativa implements Serializable{
         this.hores = hores;
     }
 
+    public List<Matricula> getLlistaMatriculas() {
+        return llistaMatriculas;
+    }
+
+    public void setLlistaMatriculas(List<Matricula> llistaMatriculas) {
+        this.llistaMatriculas = llistaMatriculas;
+    }
+
+    public Curs getIdCurs() {
+        return idCurs;
+    }
+
+    public void setIdCurs(Curs idCurs) {
+        this.idCurs = idCurs;
+    }
+
+    public Modul getIdModul() {
+        return idModul;
+    }
+
+    public void setIdModul(Modul idModul) {
+        this.idModul = idModul;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + this.id;
+        hash = 83 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -76,7 +122,7 @@ public class UnitatFormativa implements Serializable{
             return false;
         }
         final UnitatFormativa other = (UnitatFormativa) obj;
-        if (this.id != other.id) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
@@ -84,10 +130,8 @@ public class UnitatFormativa implements Serializable{
 
     @Override
     public String toString() {
-        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + '}';
-    }
-
-    public UnitatFormativa() {
+        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", idCurs=" + idCurs + ", idModul=" + idModul + '}';
     }
    
+    
 }

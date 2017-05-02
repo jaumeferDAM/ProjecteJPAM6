@@ -7,11 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,23 +28,32 @@ public class Modul implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idModul", unique = true, nullable = false)
-    private int id;
+    private Long id;
     
     @Column(name = "nomModul", length = 50, nullable = false)
     private String nom;
     
-    ArrayList <UnitatFormativa> llistaUnitatsFormatives;
+    @OneToMany(mappedBy = "modul")
+    private List<UnitatFormativa> llistaUF;
 
-    public Modul(int id, String nom) {
+    @ManyToOne
+    @JoinColumn(name = "idCicle")
+    private Cicle cicle;
+
+    public Modul(Long id, String nom, Cicle cicle) {
         this.id = id;
         this.nom = nom;
+        this.cicle = cicle;
     }
 
-    public int getId() {
+    public Modul() {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -51,18 +65,26 @@ public class Modul implements Serializable{
         this.nom = nom;
     }
 
-    public ArrayList<UnitatFormativa> getLlistaUnitatsFormatives() {
-        return llistaUnitatsFormatives;
+    public List<UnitatFormativa> getLlistaUF() {
+        return llistaUF;
     }
 
-    public void setLlistaUnitatsFormatives(ArrayList<UnitatFormativa> llistaUnitatsFormatives) {
-        this.llistaUnitatsFormatives = llistaUnitatsFormatives;
+    public void setLlistaUF(List<UnitatFormativa> llistaUF) {
+        this.llistaUF = llistaUF;
+    }
+
+    public Cicle getCicle() {
+        return cicle;
+    }
+
+    public void setCicle(Cicle cicle) {
+        this.cicle = cicle;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + this.id;
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -78,7 +100,7 @@ public class Modul implements Serializable{
             return false;
         }
         final Modul other = (Modul) obj;
-        if (this.id != other.id) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
@@ -86,11 +108,9 @@ public class Modul implements Serializable{
 
     @Override
     public String toString() {
-        return "Modul{" + "id=" + id + ", nom=" + nom + ", llistaUnitatsFormatives=" + llistaUnitatsFormatives + '}';
+        return "Modul{" + "id=" + id + ", nom=" + nom + ", llistaUF=" + llistaUF + ", cicle=" + cicle + '}';
     }
-
-    public Modul() {
-    }
+    
     
     
     
