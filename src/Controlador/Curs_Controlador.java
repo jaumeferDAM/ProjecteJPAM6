@@ -37,4 +37,6 @@ public class Curs_Controlador extends GENERICODAOImpl<Object, Serializable>{
         return super.crear(); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    
 }
