@@ -28,7 +28,7 @@ public class importe implements Serializable{
     private double importe;
     
     @OneToOne
-    @JoinColumn(name = "matriculaId")
+    @JoinColumn(name = "idMatricula")
     private Matricula matricula;
 
     public importe(Long id, double importe, Matricula matricula) {

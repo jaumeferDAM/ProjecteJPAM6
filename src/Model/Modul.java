@@ -39,6 +39,10 @@ public class Modul implements Serializable{
     @ManyToOne
     @JoinColumn(name = "idCurs")
     private Curs curs;
+    
+    @ManyToOne
+    @JoinColumn(name = "idCicle")
+    private Cicle cicle;
 
     public Modul() {
     }

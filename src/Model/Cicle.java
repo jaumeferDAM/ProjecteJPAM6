@@ -39,7 +39,7 @@ public class Cicle implements Serializable{
     private String grau;
         
     @OneToMany(mappedBy="cicle")
-    private List<Curs> llistaCursos;
+    private List<Modul> llistaModuls;
     
     @ManyToOne
     @JoinColumn(name = "idFamilia")
@@ -77,12 +77,12 @@ public class Cicle implements Serializable{
         this.grau = grau;
     }
 
-    public List<Curs> getLlistaCursos() {
-        return llistaCursos;
+    public List<Modul> getLlistaModuls() {
+        return llistaModuls;
     }
 
-    public void setLlistaCursos(List<Curs> llistaCursos) {
-        this.llistaCursos = llistaCursos;
+    public void setLlistaModuls(List<Modul> llistaModuls) {
+        this.llistaModuls = llistaModuls;
     }
 
     public Familia getFamilia() {
@@ -124,8 +124,10 @@ public class Cicle implements Serializable{
 
     @Override
     public String toString() {
-        return "Cicle{" + "id=" + id + ", nom=" + nom + ", grau=" + grau + ", llistaCursos=" + llistaCursos + ", familia=" + familia + '}';
+        return "Cicle{" + "id=" + id + ", nom=" + nom + ", grau=" + grau + ", llistaModuls=" + llistaModuls + ", familia=" + familia + '}';
     }
+
+    
 
     
     
