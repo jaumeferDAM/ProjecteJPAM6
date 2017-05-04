@@ -8,42 +8,17 @@ package Controlador;
 import Model.Alumne;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 /**
  *
  * @author ALUMNEDAM
  */
-public class Alumne_Controlador extends Generic_Controlador<Object, Serializable>{
+public class Alumne_Controlador extends Generic_Controlador<Alumne>{
 
-    @Override
-    public ArrayList<Object> listarTodos(String s) {
-        return super.listarTodos(s); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void eliminar(Serializable id) {
-        super.eliminar(id); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object get(Serializable id) {
-        return super.get(id); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void actualizar(Object entity) {
-        super.actualizar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void insertar(Object entity) {
-        super.insertar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object crear() {
-        return super.crear(); //To change body of generated methods, choose Tools | Templates.
+    public Alumne_Controlador(EntityManager entityManger) {
+        super(entityManger);
     }
     
     public Alumne buscarCognom(String cognom) {
