@@ -19,8 +19,8 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "familiaCicles")
-//NamedQueries({
-//@NamedQuery(name="familiaId", query="SELECT f FROM familiaCicles f WHERE f.id=:id")})
+@NamedQueries({
+@NamedQuery(name="familiaId", query="SELECT f FROM familiaCicles f WHERE f.id=:id")})
 public class Familia implements Serializable {
     
     private static final long serialVersionUID = 1L;
