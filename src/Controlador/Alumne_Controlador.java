@@ -14,7 +14,7 @@ import javax.persistence.Query;
  *
  * @author ALUMNEDAM
  */
-public class Alumne_Controlador extends GENERICODAOImpl<Object, Serializable>{
+public class Alumne_Controlador extends Generic_Controlador<Object, Serializable>{
 
     @Override
     public ArrayList<Object> listarTodos(String s) {

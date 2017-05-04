@@ -1,45 +1,37 @@
 
 package Controlador;
 
+import Model.Curs;
+import Model.Modul;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 
-public class Cicle_Controlador extends GENERICODAOImpl<Object, Serializable>{
+public class Cicle_Controlador extends Generic_Controlador{
 
-    @Override
-    public ArrayList<Object> listarTodos(String s) {
-        return super.listarTodos(s); //To change body of generated methods, choose Tools | Templates.
+    public Cicle_Controlador(EntityManager entityManager) {
+        super(entityManager);
     }
 
-    @Override
-    public void eliminar(Serializable id) {
-        super.eliminar(id); //To change body of generated methods, choose Tools | Templates.
+     public List<Curs> BuscarCursosCicle(Long id) {
+        System.out.println("Busqueda per id");
+        Query query = em.createNamedQuery("cercaCursosCicles", Curs.class);
+        query.setParameter("id", id);
+        List<Curs> p = (List<Curs>) query.getResultList();
+        System.out.println(p.size());
+        return p;
     }
 
-    @Override
-    public Object get(Serializable id) {
-        return super.get(id); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void actualizar(Object entity) {
-        super.actualizar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void insertar(Object entity) {
-        super.insertar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object crear() {
-        return super.crear(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    Object buscarPorClave(String nif) {
-        return super.buscarPorClave(nif); //To change body of generated methods, choose Tools | Templates.
+    public List<Modul> BuscarModulsCicle(Long id) {
+        System.out.println("Busqueda per id");
+        Query query = em.createNamedQuery("cercaModulsCicles", Modul.class);
+        query.setParameter("id", id);
+        List<Modul> p = (List<Modul>) query.getResultList();
+        System.out.println(p.size());
+        return p;
     }
     
 }

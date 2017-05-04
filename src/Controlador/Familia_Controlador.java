@@ -8,7 +8,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 
-public class Familia_Controlador extends GENERICODAOImpl<Object, Serializable>{
+public class Familia_Controlador extends Generic_Controlador<Object, Serializable>{
 
     @Override
     public ArrayList<Object> listarTodos(String s) {

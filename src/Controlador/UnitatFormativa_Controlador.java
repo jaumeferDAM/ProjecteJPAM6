@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class UnitatFormativa_Controlador extends GENERICODAOImpl<Object, Serializable>{
+public class UnitatFormativa_Controlador extends Generic_Controlador<Object, Serializable>{
 
     @Override
     public ArrayList<Object> listarTodos(String s) {

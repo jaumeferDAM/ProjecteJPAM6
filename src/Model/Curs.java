@@ -11,10 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+@NamedQuery(name = "cercaModulCurs", query = "SELECT c FROM Modul c WHERE c.curs.id=:id"),
+@NamedQuery(name = "cercaUFCurs", query = "SELECT c FROM UnitatFormativa c WHERE c.curs.id=:id")})
 @Table(name = "curs")
 public class Curs {
     

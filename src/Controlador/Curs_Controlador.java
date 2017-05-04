@@ -1,42 +1,37 @@
 
 package Controlador;
 
+import Model.Modul;
+import Model.UnitatFormativa;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 
-public class Curs_Controlador extends GENERICODAOImpl<Object, Serializable>{
+public class Curs_Controlador extends Generic_Controlador{
 
-    @Override
-    public ArrayList<Object> listarTodos(String s) {
-        return super.listarTodos(s); //To change body of generated methods, choose Tools | Templates.
+    public Curs_Controlador(EntityManager entityManger) {
+        super(entityManger);
     }
 
-    @Override
-    public void eliminar(Serializable id) {
-        super.eliminar(id); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object get(Serializable id) {
-        return super.get(id); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void actualizar(Object entity) {
-        super.actualizar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void insertar(Object entity) {
-        super.insertar(entity); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object crear() {
-        return super.crear(); //To change body of generated methods, choose Tools | Templates.
+    public List<UnitatFormativa> BuscarUFCurs(Long id) {
+        System.out.println("Busqueda per id");
+        Query query = em.createNamedQuery("cercaUFCurs", UnitatFormativa.class);
+        query.setParameter("id", id);
+        List<UnitatFormativa> p = (List<UnitatFormativa>) query.getResultList();
+        return p;
     }
     
+    public List<Modul> BuscarModulsCurs(Long id) {
+        System.out.println("Busqueda per id");
+        Query query = em.createNamedQuery("cercaModulCurs", Modul.class);
+        query.setParameter("id", id);
+        List<Modul> p = (List<Modul>) query.getResultList();
+        return p;
+    }
+
     
     
 }

@@ -37,7 +37,7 @@ public class UnitatFormativa implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "idCurs")
-    private Curs idCurs;
+    private Curs curs;
 
     @ManyToOne
     @JoinColumn(name = "idModul")
@@ -47,7 +47,7 @@ public class UnitatFormativa implements Serializable{
         this.id = id;
         this.nom = nom;
         this.hores = hores;
-        this.idCurs = idCurs;
+        this.curs = idCurs;
         this.idModul = idModul;
     }
     
@@ -88,11 +88,11 @@ public class UnitatFormativa implements Serializable{
     }
 
     public Curs getIdCurs() {
-        return idCurs;
+        return curs;
     }
 
     public void setIdCurs(Curs idCurs) {
-        this.idCurs = idCurs;
+        this.curs = idCurs;
     }
 
     public Modul getIdModul() {
@@ -130,8 +130,10 @@ public class UnitatFormativa implements Serializable{
 
     @Override
     public String toString() {
-        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", idCurs=" + idCurs + ", idModul=" + idModul + '}';
+        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", curs=" + curs + ", idModul=" + idModul + '}';
     }
+
+    
    
     
 }
