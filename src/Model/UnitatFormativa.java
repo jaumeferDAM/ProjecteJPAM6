@@ -41,7 +41,7 @@ public class UnitatFormativa implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "idModul")
-    private Modul idModul;
+    private Modul modul;
 
     public UnitatFormativa(Long id, String nom, String hores, Curs idCurs, Modul idModul) {
         this.id = id;
