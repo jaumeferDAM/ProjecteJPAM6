@@ -27,6 +27,7 @@ public class VistaPrograma extends javax.swing.JFrame {
         initComponents();
         EntityManager em = EM_Controlador.getEntityManager();
         generic_Controlador = new Generic_Controlador(em);
+        System.out.println(em);
     }
 
     public void BuidarCamps() {
@@ -623,6 +624,7 @@ public class VistaPrograma extends javax.swing.JFrame {
 
     private void btnCrearAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAlumneActionPerformed
         btnCrearAlumne.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearAlumnActionPerformed(evt);
             }
