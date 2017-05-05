@@ -5,7 +5,12 @@
  */
 package grafica;
 
+import Controlador.Alumne_Controlador;
+import Controlador.EM_Controlador;
+import Controlador.Generic_Controlador;
 import Model.*;
+import java.awt.event.ActionEvent;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -13,51 +18,42 @@ import Model.*;
  */
 public class VistaPrograma extends javax.swing.JFrame {
 
+    Generic_Controlador generic_Controlador;
+
     /**
      * Creates new form A
      */
     public VistaPrograma() {
         initComponents();
+        EntityManager em = EM_Controlador.getEntityManager();
+        generic_Controlador = new Generic_Controlador(em);
     }
 
-    
     public void BuidarCamps() {
         campNomAlumne.setText("");
         campCognomAlumne.setText("");
         campNifAlumne.setText("");
         campCorreuAlumne.setText("");
         campTelefonAlumne.setText("");
-        campCercaAlumnes.setText(""); 
-        
+        campCercaAlumnes.setText("");
+
         campNomCicle.setText("");
         campGrauCicle.setText("");
-        
+
         campIdFamilia.setText("");
         campNomFamilia.setText("");
-        
+
         campalumneMatricula.setText("");
         campDataMatricula.setText("");
         campModalitatMatricula.setText("");
         campDescompteMatricula.setText("");
-        
+
     }
-    
-    public void BuidarTaula(){
-        
+
+    public void BuidarTaula() {
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -592,7 +588,6 @@ public class VistaPrograma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
 
     private void btnCercarTotsAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCercarTotsAlumneActionPerformed
 
@@ -602,9 +597,10 @@ public class VistaPrograma extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCercarAlumneActionPerformed
 
-    /*************************     MATRICULA       *****************************/
-    
-    
+    /**
+     * *********************** MATRICULA ****************************
+     */
+
     private void btnCrearMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatriculaActionPerformed
         Matricula matricula = new Matricula();
     }//GEN-LAST:event_btnCrearMatriculaActionPerformed
@@ -621,12 +617,23 @@ public class VistaPrograma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCercarMatriculaActionPerformed
 
-    
-    /************       ALumne      *******************/
-    
-    
+    /**
+     * ********** ALumne ******************
+     */
+
     private void btnCrearAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAlumneActionPerformed
-        Alumne alum = new Alumne(campNifAlumne.getText(), campNomAlumne.getText(), campCognomAlumne.getText(), campCorreuAlumne.getText(), Integer.parseInt(campTelefonAlumne.getText()));
+        btnCrearAlumne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearAlumnActionPerformed(evt);
+            }
+
+            private void btnCrearAlumnActionPerformed(ActionEvent evt) {
+                generic_Controlador.conectar();
+                Alumne al = new Alumne(campNifAlumne.getText(), campNomAlumne.getText(), campCognomAlumne.getText(), campCorreuAlumne.getText(), Integer.parseInt(campTelefonAlumne.getText()));
+                generic_Controlador.Insertar(al);
+                generic_Controlador.desconectar();
+            }
+        });
     }//GEN-LAST:event_btnCrearAlumneActionPerformed
 
     private void btnModificarAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarAlumneActionPerformed
@@ -637,11 +644,10 @@ public class VistaPrograma extends javax.swing.JFrame {
         Alumne alum = new Alumne(campNifAlumne.getText(), campNomAlumne.getText(), campCognomAlumne.getText(), campCorreuAlumne.getText(), Integer.parseInt(campTelefonAlumne.getText()));
     }//GEN-LAST:event_btnEliminarAlumneActionPerformed
 
-    
-    /*************      CICLE       ***********/
-    
-    
-    
+    /**
+     * *********** CICLE **********
+     */
+
     private void btnCrearCicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCicleActionPerformed
         //Cicle cicle = new Cicle(0L, campNomCicle.getText(), campGrauCicle.getText());
     }//GEN-LAST:event_btnCrearCicleActionPerformed
@@ -654,10 +660,10 @@ public class VistaPrograma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarCicleActionPerformed
 
-    
-    /******************     FAMILIA     **********************/
-    
-    
+    /**
+     * **************** FAMILIA *********************
+     */
+
     private void btnCrearFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearFamiliaActionPerformed
         Familia familia = new Familia(0L, campNomFamilia.getText());
     }//GEN-LAST:event_btnCrearFamiliaActionPerformed
@@ -670,12 +676,6 @@ public class VistaPrograma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarFamiliaActionPerformed
 
-    
-    
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
