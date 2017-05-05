@@ -48,7 +48,7 @@ public class UnitatFormativa implements Serializable{
         this.nom = nom;
         this.hores = hores;
         this.curs = idCurs;
-        this.idModul = idModul;
+        this.modul = idModul;
     }
     
     
@@ -96,11 +96,11 @@ public class UnitatFormativa implements Serializable{
     }
 
     public Modul getIdModul() {
-        return idModul;
+        return modul;
     }
 
     public void setIdModul(Modul idModul) {
-        this.idModul = idModul;
+        this.modul = idModul;
     }
 
     @Override
@@ -130,10 +130,8 @@ public class UnitatFormativa implements Serializable{
 
     @Override
     public String toString() {
-        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", curs=" + curs + ", idModul=" + idModul + '}';
+        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", curs=" + curs + ", modul=" + modul + '}';
     }
 
-    
-   
     
 }
