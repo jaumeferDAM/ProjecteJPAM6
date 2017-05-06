@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,8 +52,8 @@ public class Matricula implements Serializable{
     @OneToOne(mappedBy = "matricula")
     private importe idImport;
     
-    @ManyToMany(mappedBy = "listaMatriculas")
-    private List<UnitatFormativa> llistaUF;
+     @ManyToMany(mappedBy = "listaMatriculas", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+     private List<UnitatFormativa> listaUF;
 
     public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, importe idImport) {
         this.id = id;
@@ -114,13 +116,15 @@ public class Matricula implements Serializable{
         this.idImport = idImport;
     }
 
-    public List<UnitatFormativa> getLlistaUF() {
-        return llistaUF;
+    public List<UnitatFormativa> getListaUF() {
+        return listaUF;
     }
 
-    public void setLlistaUF(List<UnitatFormativa> llistaUF) {
-        this.llistaUF = llistaUF;
+    public void setListaUF(List<UnitatFormativa> listaUF) {
+        this.listaUF = listaUF;
     }
+
+
 
     @Override
     public int hashCode() {
@@ -149,9 +153,9 @@ public class Matricula implements Serializable{
 
     @Override
     public String toString() {
-        return "Matricula{" + "id=" + id + ", idAlumne=" + idAlumne + ", data=" + data + ", modalitat=" + modalitat + ", descompte=" + descompte + ", idImport=" + idImport + ", llistaUF=" + llistaUF + '}';
+        return "Matricula{" + "id=" + id + ", idAlumne=" + idAlumne + ", data=" + data + ", modalitat=" + modalitat + ", descompte=" + descompte + ", idImport=" + idImport + ", listaUF=" + listaUF + '}';
     }
 
-
+    
     
 }

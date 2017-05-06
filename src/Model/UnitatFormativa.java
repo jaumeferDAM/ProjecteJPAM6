@@ -4,8 +4,10 @@ package Model;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +34,8 @@ public class UnitatFormativa implements Serializable{
     @Column(name = "horesUnitatFormativa", nullable = false)
     private String hores;
 
-    @ManyToMany
-    private List<Matricula> llistaMatriculas;
+    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    private List<Matricula> listaMatriculas;
 
     @ManyToOne
     @JoinColumn(name = "idCurs")
@@ -79,13 +81,15 @@ public class UnitatFormativa implements Serializable{
         this.hores = hores;
     }
 
-    public List<Matricula> getLlistaMatriculas() {
-        return llistaMatriculas;
+    public List<Matricula> getListaMatriculas() {
+        return listaMatriculas;
     }
 
-    public void setLlistaMatriculas(List<Matricula> llistaMatriculas) {
-        this.llistaMatriculas = llistaMatriculas;
+    public void setListaMatriculas(List<Matricula> listaMatriculas) {
+        this.listaMatriculas = listaMatriculas;
     }
+
+  
 
     public Curs getIdCurs() {
         return curs;
@@ -130,8 +134,10 @@ public class UnitatFormativa implements Serializable{
 
     @Override
     public String toString() {
-        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", llistaMatriculas=" + llistaMatriculas + ", curs=" + curs + ", modul=" + modul + '}';
+        return "UnitatFormativa{" + "id=" + id + ", nom=" + nom + ", hores=" + hores + ", listaMatriculas=" + listaMatriculas + ", curs=" + curs + ", modul=" + modul + '}';
     }
+
+    
 
     
 }
