@@ -3,6 +3,7 @@ package Model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +19,18 @@ import javax.persistence.Table;
 //@NamedQuery(name="alumneCognom", query="SELECT p FROM alumnes p WHERE p.cognom=:cognom")})
 @Table(name = "alumnes")
 public class Alumne implements Serializable{
+
+    public Alumne(String nif, String nom, String cognom, String correu, int telefon, Matricula matriculaId) {
+        this.nif = nif;
+        this.nom = nom;
+        this.cognom = cognom;
+        this.correu = correu;
+        this.telefon = telefon;
+        this.matriculaId = matriculaId;
+    }
     
     @Id
-    @Column(name = "idAlumne", unique = true, nullable = false)
+    @Column(name = "CLIENTID", unique = true, nullable = false)
     private String nif;
     
     @Column(name = "nom", length = 20, nullable = false)
@@ -35,8 +45,8 @@ public class Alumne implements Serializable{
     @Column(name = "telefon", length = 11)
     private int telefon;
     
-    @OneToOne(mappedBy = "")
-    private Matricula idMatricula;
+     @OneToOne(mappedBy = "",cascade=CascadeType.MERGE)
+     private Matricula matriculaId;
 
     public Alumne(String nif, String nom, String cognom, String correu, int telefon) {
         this.nif = nif;
@@ -47,6 +57,14 @@ public class Alumne implements Serializable{
     }
 
     public Alumne() {
+    }
+
+    public Matricula getMatriculaId() {
+        return matriculaId;
+    }
+
+    public void setMatriculaId(Matricula matriculaId) {
+        this.matriculaId = matriculaId;
     }
     
 
@@ -119,7 +137,7 @@ public class Alumne implements Serializable{
 
     @Override
     public String toString() {
-        return "Alumne{" + "nif=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + ", idMatricula=" + idMatricula + '}';
+        return "Alumne{" + "nif=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + ", idMatricula=" + matriculaId + '}';
     }
 
     

@@ -34,16 +34,16 @@ public class Matricula implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idMatricula", unique = true, nullable = false)
+    @Column(name = "IDMATRICULA", unique = true, nullable = false)
     private Long id;
     
-    @OneToOne
-    @JoinColumn(name = "alumneId")
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "ALUMNEID")
     private Alumne idAlumne;
 
     private Date data;
 
-    @Column(name = "modalitat", length = 50, nullable = false)
+    @Column(name = "MODALITATMATRICULA", length = 50, nullable = false)
     private String modalitat;
 
     @Column(name = "descompte", length = 50, nullable = false)
