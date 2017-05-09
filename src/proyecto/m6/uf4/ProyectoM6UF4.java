@@ -1,9 +1,12 @@
 package proyecto.m6.uf4;
 
 import Controlador.Alumne_Controlador;
+import Controlador.Cicle_Controlador;
 import Controlador.Matricula_Controlador;
 import Model.Alumne;
+import Model.Cicle;
 import Model.Matricula;
+import Model.Modul;
 import Model.importe;
 import java.util.Date;
 import javax.persistence.EntityManager;
@@ -41,10 +44,14 @@ public class ProyectoM6UF4 {
         m1.setIdAlumne(a1);
         m1.setDescompte("0");
         m1.setModalitat("a");
-//        a1.setMatriculaId(m1);
+        a1.setMatriculaId(m1);
 
         Alumne_Controlador acontrol = new Alumne_Controlador(em);
         Matricula_Controlador mcontrol  = new Matricula_Controlador(em);
+//        Modul m = new Modul(0L, "PRUEBAGRABAR", "UNO", cicle)
+          Cicle c = new Cicle(0L, "PRUEBA", "DADA", null);
+          Cicle_Controlador cControl = new Cicle_Controlador(em);
+//          cControl.Insertar(c);
 //        mcontrol.Insertar(m1);
         acontrol.Insertar(a1);
     }

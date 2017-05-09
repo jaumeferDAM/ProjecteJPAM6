@@ -36,8 +36,8 @@ public class Alumne implements Serializable{
     @Column(name = "telefon", length = 11)
     private int telefon;
     
-    @OneToOne(mappedBy = "idMatricula", cascade=CascadeType.MERGE)
-     private Matricula idMatricula;//////
+    @OneToOne(mappedBy = "idAlumne", cascade=CascadeType.MERGE)
+     private Matricula idMatricula;
 
     public Alumne(String nif, String nom, String cognom, String correu, int telefon) {
         this.nif = nif;
