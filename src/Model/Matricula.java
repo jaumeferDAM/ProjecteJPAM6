@@ -36,7 +36,7 @@ public class Matricula implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "idMatricula", unique = true, nullable = false)
-    private Long id;
+    private Long idMatricula;/////
     
     @OneToOne()
     @JoinColumn(name = "idAlumne")
@@ -65,7 +65,7 @@ public class Matricula implements Serializable{
     }
 
     public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, importe idImport) {
-        this.id = id;
+        this.idMatricula = id;
         this.idAlumne = idAlumne;
         this.data = data;
         this.modalitat = modalitat;
@@ -79,11 +79,11 @@ public class Matricula implements Serializable{
     }
 
     public Long getId() {
-        return id;
+        return idMatricula;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idMatricula = id;
     }
 
     public Alumne getIdAlumne() {
@@ -139,7 +139,7 @@ public class Matricula implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
+        hash = 23 * hash + Objects.hashCode(this.idMatricula);
         return hash;
     }
 
@@ -155,7 +155,7 @@ public class Matricula implements Serializable{
             return false;
         }
         final Matricula other = (Matricula) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.idMatricula, other.idMatricula)) {
             return false;
         }
         return true;
@@ -163,7 +163,7 @@ public class Matricula implements Serializable{
 
     @Override
     public String toString() {
-        return "Matricula{" + "id=" + id + ", idAlumne=" + idAlumne + ", data=" + data + ", modalitat=" + modalitat + ", descompte=" + descompte + ", idImport=" + idImport + ", listaUF=" + listaUF + '}';
+        return "Matricula{" + "id=" + idMatricula + ", idAlumne=" + idAlumne + ", data=" + data + ", modalitat=" + modalitat + ", descompte=" + descompte + ", idImport=" + idImport + ", listaUF=" + listaUF + '}';
     }
 
     

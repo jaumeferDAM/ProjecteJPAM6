@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class Alumne implements Serializable{
      
     @Id
-    @Column(name = "CLIENTID", unique = true, nullable = false)
+    @Column(name = "idAlumne", unique = true, nullable = false)
     private String nif;
     
     @Column(name = "nom", length = 20, nullable = false)
@@ -37,7 +37,7 @@ public class Alumne implements Serializable{
     private int telefon;
     
     @OneToOne(mappedBy = "idMatricula", cascade=CascadeType.MERGE)
-     private Matricula matriculaId;
+     private Matricula idMatricula;//////
 
     public Alumne(String nif, String nom, String cognom, String correu, int telefon) {
         this.nif = nif;
@@ -51,11 +51,11 @@ public class Alumne implements Serializable{
     }
 
     public Matricula getMatriculaId() {
-        return matriculaId;
+        return idMatricula;
     }
 
     public void setMatriculaId(Matricula matriculaId) {
-        this.matriculaId = matriculaId;
+        this.idMatricula = matriculaId;
     }
     
 
@@ -128,7 +128,7 @@ public class Alumne implements Serializable{
 
     @Override
     public String toString() {
-        return "Alumne{" + "nif=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + ", idMatricula=" + matriculaId + '}';
+        return "Alumne{" + "nif=" + nif + ", nom=" + nom + ", cognom=" + cognom + ", correu=" + correu + ", telefon=" + telefon + ", idMatricula=" + idMatricula + '}';
     }
 
     
