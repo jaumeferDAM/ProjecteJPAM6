@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -19,14 +20,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "familiaCicles")
-@NamedQueries({
-@NamedQuery(name="familiaId", query="SELECT f FROM Familia f WHERE f.id=:id")})
+//@NamedQueries({
+//@NamedQuery(name="familiaId", query="SELECT f FROM Familia f WHERE f.id=:id")})
 public class Familia implements Serializable {
     
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idFamilia", unique = true, nullable = false)
     private Long id;
             
@@ -34,7 +35,7 @@ public class Familia implements Serializable {
     private String nom;
     
     
-    @OneToMany(mappedBy = "familia")
+    @OneToMany(mappedBy = "familia", cascade = CascadeType.ALL)
     private List<Cicle> llistaCicles;
 
     public Familia(Long id, String nom) {

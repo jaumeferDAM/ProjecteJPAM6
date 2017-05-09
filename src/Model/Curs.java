@@ -1,9 +1,11 @@
 
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,10 +23,9 @@ import javax.persistence.Table;
 @NamedQuery(name = "cercaModulCurs", query = "SELECT c FROM Modul c WHERE c.curs.id=:id"),
 @NamedQuery(name = "cercaUFCurs", query = "SELECT c FROM UnitatFormativa c WHERE c.curs.id=:id")})
 @Table(name = "curs")
-public class Curs {
+public class Curs implements Serializable{
     
     private static final long serialVersionUID = 1L;
-    
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +38,11 @@ public class Curs {
     @OneToMany(mappedBy = "curs")
     private List<UnitatFormativa> listaUF;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCicle")
     private Cicle cicle;
     
-    @OneToMany (mappedBy = "curs")
+    @OneToMany (mappedBy = "curs", cascade = CascadeType.ALL)
     private List<Modul> llistaModuls;
 
     public Curs(Long id, String nom, Cicle cicle) {
@@ -49,6 +50,12 @@ public class Curs {
         this.nom = nom;
         this.cicle = cicle;
     }
+
+    public Curs(String nom, Cicle cicle) {
+        this.nom = nom;
+        this.cicle = cicle;
+    }
+
 
     public Curs() {
     }

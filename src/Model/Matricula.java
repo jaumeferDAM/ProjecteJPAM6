@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,26 +35,34 @@ public class Matricula implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "IDMATRICULA", unique = true, nullable = false)
+    @Column(name = "idMatricula", unique = true, nullable = false)
     private Long id;
     
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name = "ALUMNEID")
+    @OneToOne()
+    @JoinColumn(name = "idAlumne")
     private Alumne idAlumne;
 
     private Date data;
 
-    @Column(name = "MODALITATMATRICULA", length = 50, nullable = false)
+    @Column(name = "modalitatMatricula", length = 50, nullable = false)
     private String modalitat;
 
     @Column(name = "descompte", length = 50, nullable = false)
     private String descompte;
     
-    @OneToOne(mappedBy = "matricula")
+    @Embedded
     private importe idImport;
     
-     @ManyToMany(mappedBy = "listaMatriculas", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-     private List<UnitatFormativa> listaUF;
+    @ManyToMany(mappedBy = "listaMatriculas", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    private List<UnitatFormativa> listaUF;
+
+    public Matricula(Alumne idAlumne, Date data, String modalitat, String descompte, importe idImport) {
+        this.idAlumne = idAlumne;
+        this.data = data;
+        this.modalitat = modalitat;
+        this.descompte = descompte;
+        this.idImport = idImport;
+    }
 
     public Matricula(Long id, Alumne idAlumne, Date data, String modalitat, String descompte, importe idImport) {
         this.id = id;
@@ -63,6 +72,7 @@ public class Matricula implements Serializable{
         this.descompte = descompte;
         this.idImport = idImport;
     }
+    
     
     
     public Matricula() {

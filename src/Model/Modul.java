@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,8 +23,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({
-@NamedQuery(name = "cercaUFModul", query = "SELECT c FROM UnitatFormativa c WHERE c.modul.id=:id")})
+//@NamedQueries({
+//@NamedQuery(name = "cercaUFModul", query = "SELECT c FROM UnitatFormativa c WHERE c.modul.id=:id")})
 @Table(name = "modul")
 public class Modul implements Serializable{
     
@@ -37,24 +38,32 @@ public class Modul implements Serializable{
     @Column(name = "nomModul", length = 50, nullable = false)
     private String nom;
     
-    @OneToMany(mappedBy = "modul")
+     @OneToMany(mappedBy = "modul", cascade = CascadeType.ALL)
     private List<UnitatFormativa> llistaUF;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCurs")
     private Curs curs;
-    
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCicle")
     private Cicle cicle;
+
 
     public Modul() {
     }
 
-    public Modul(Long id, String nom, Curs curs) {
+    public Modul(Long id, String nom, Curs curs, Cicle cicle) {
         this.id = id;
         this.nom = nom;
         this.curs = curs;
+        this.cicle = cicle;
+    }
+
+    public Modul(String nom, Curs curs, Cicle cicle) {
+        this.nom = nom;
+        this.curs = curs;
+        this.cicle = cicle;
     }
 
     public Long getId() {

@@ -20,7 +20,6 @@ import javax.persistence.Table;
 @Table(name = "unitatFormativa")
 public class UnitatFormativa implements Serializable{
     
-    
     private static final long serialVersionUID = 1L; 
     
     @Id
@@ -37,13 +36,14 @@ public class UnitatFormativa implements Serializable{
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     private List<Matricula> listaMatriculas;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCurs")
     private Curs curs;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idModul")
     private Modul modul;
+
 
     public UnitatFormativa(Long id, String nom, String hores, Curs idCurs, Modul idModul) {
         this.id = id;
@@ -51,6 +51,13 @@ public class UnitatFormativa implements Serializable{
         this.hores = hores;
         this.curs = idCurs;
         this.modul = idModul;
+    }
+
+    public UnitatFormativa(String nom, String hores, Curs curs, Modul modul) {
+        this.nom = nom;
+        this.hores = hores;
+        this.curs = curs;
+        this.modul = modul;
     }
     
     
