@@ -30,7 +30,7 @@ public class ProyectoM6UF4 {
         System.out.println(em);
         Date d = new Date(2000, 3, 34);
         
-        importe i1 = new importe(0L, 0, null);
+        //importe i1 = new importe(0L, 0, null);
         
         Alumne a1 = new Alumne("pruebadeInsercionDos", "ffff", "ffff", "fffff", 333);
         

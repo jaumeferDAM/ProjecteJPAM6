@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({})
+//@NamedQueries({})
 //@NamedQuery(name="alumneCognom", query="SELECT p FROM alumnes p WHERE p.cognom=:cognom")})
 @Table(name = "alumnes")
 public class Alumne implements Serializable{
