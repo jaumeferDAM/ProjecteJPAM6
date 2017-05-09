@@ -85,6 +85,8 @@ public class VistaPrograma extends javax.swing.JFrame {
         btnEliminarFamilia = new javax.swing.JButton();
         btnModificarFamilia = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        TextFieldNomModul = new javax.swing.JTextField();
+        CreaModul = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         campNomAlumne = new javax.swing.JTextField();
@@ -279,15 +281,39 @@ public class VistaPrograma extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Familia cicles", jPanel4);
 
+        TextFieldNomModul.setToolTipText("");
+        TextFieldNomModul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldNomModulActionPerformed(evt);
+            }
+        });
+
+        CreaModul.setText("Crear");
+        CreaModul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreaModulActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(TextFieldNomModul, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addComponent(CreaModul)
+                .addGap(141, 141, 141))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldNomModul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CreaModul))
+                .addContainerGap(455, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Moduls", jPanel5);
@@ -639,11 +665,17 @@ public class VistaPrograma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearAlumneActionPerformed
 
     private void btnModificarAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarAlumneActionPerformed
-        // TODO add your handling code here:
+         generic_Controlador.conectar();
+                Alumne al = new Alumne(campNifAlumne.getText(), campNomAlumne.getText(), campCognomAlumne.getText(), campCorreuAlumne.getText(), Integer.parseInt(campTelefonAlumne.getText()));
+                generic_Controlador.Modificar(al);
+                generic_Controlador.desconectar();
     }//GEN-LAST:event_btnModificarAlumneActionPerformed
 
     private void btnEliminarAlumneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAlumneActionPerformed
         Alumne alum = new Alumne(campNifAlumne.getText(), campNomAlumne.getText(), campCognomAlumne.getText(), campCorreuAlumne.getText(), Integer.parseInt(campTelefonAlumne.getText()));
+        generic_Controlador.conectar();
+        generic_Controlador.Eliminar(alum);
+        generic_Controlador.desconectar();
     }//GEN-LAST:event_btnEliminarAlumneActionPerformed
 
     /**
@@ -677,6 +709,14 @@ public class VistaPrograma extends javax.swing.JFrame {
     private void btnEliminarFamiliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarFamiliaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarFamiliaActionPerformed
+
+    private void TextFieldNomModulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNomModulActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldNomModulActionPerformed
+
+    private void CreaModulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreaModulActionPerformed
+        
+    }//GEN-LAST:event_CreaModulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -715,6 +755,8 @@ public class VistaPrograma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CreaModul;
+    private javax.swing.JTextField TextFieldNomModul;
     private javax.swing.JButton btnCercarAlumne;
     private javax.swing.JButton btnCercarMatricula;
     private javax.swing.JButton btnCercarTotsAlumne;

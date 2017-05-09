@@ -305,15 +305,46 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="672" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="TextFieldNomModul" min="-2" pref="180" max="-2" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
+                      <Component id="CreaModul" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="517" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="TextFieldNomModul" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CreaModul" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="455" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="TextFieldNomModul">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldNomModulActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="CreaModul">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreaModulActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">
           <Constraints>

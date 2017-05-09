@@ -25,7 +25,7 @@ public class ProyectoM6UF4 {
 //            EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTE");
 //            em = emf.createEntityManager();
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("EXTERNA");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTE");
         em = emf.createEntityManager();
         System.out.println(em);
         Date d = new Date(2000, 3, 34);
