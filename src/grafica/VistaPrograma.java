@@ -76,6 +76,14 @@ public class VistaPrograma extends javax.swing.JFrame {
         btnEliminarCicle = new javax.swing.JButton();
         btnModificarCicle = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        campNomCurs = new javax.swing.JTextField();
+        campCicleCurs = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        btnCrearMatricula6 = new javax.swing.JButton();
+        btnModificarMatricula2 = new javax.swing.JButton();
+        btnEliminarMatricula2 = new javax.swing.JButton();
+        btnCercarMatricula2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         campIdFamilia = new javax.swing.JTextField();
         campNomFamilia = new javax.swing.JTextField();
@@ -85,9 +93,29 @@ public class VistaPrograma extends javax.swing.JFrame {
         btnEliminarFamilia = new javax.swing.JButton();
         btnModificarFamilia = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        TextFieldNomModul = new javax.swing.JTextField();
-        CreaModul = new javax.swing.JButton();
+        btnCrearMatricula5 = new javax.swing.JButton();
+        btnModificarMatricula1 = new javax.swing.JButton();
+        btnEliminarMatricula1 = new javax.swing.JButton();
+        btnCercarMatricula1 = new javax.swing.JButton();
+        campNifAlumne1 = new javax.swing.JTextField();
+        campCognomAlumne1 = new javax.swing.JTextField();
+        campNomAlumne1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        btnCrearMatricula2 = new javax.swing.JButton();
+        btnCrearMatricula1 = new javax.swing.JButton();
+        btnCrearMatricula3 = new javax.swing.JButton();
+        btnCrearMatricula4 = new javax.swing.JButton();
+        campalumneMatricula4 = new javax.swing.JTextField();
+        campalumneMatricula3 = new javax.swing.JTextField();
+        campalumneMatricula2 = new javax.swing.JTextField();
+        campalumneMatricula1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         campNomAlumne = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -197,15 +225,81 @@ public class VistaPrograma extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cicle formatiu", jPanel2);
 
+        jLabel19.setText("Cicle:");
+
+        jLabel21.setText("Nom: ");
+
+        btnCrearMatricula6.setText("Crear");
+        btnCrearMatricula6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearMatricula6ActionPerformed(evt);
+            }
+        });
+
+        btnModificarMatricula2.setText("Modificar");
+        btnModificarMatricula2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarMatricula2ActionPerformed(evt);
+            }
+        });
+
+        btnEliminarMatricula2.setText("Eliminar");
+        btnEliminarMatricula2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMatricula2ActionPerformed(evt);
+            }
+        });
+
+        btnCercarMatricula2.setText("Cercar");
+        btnCercarMatricula2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCercarMatricula2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campNomCurs, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campCicleCurs, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEliminarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearMatricula6, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCercarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnCrearMatricula6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(btnModificarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCercarMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campNomCurs, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campCicleCurs, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Curs", jPanel3);
@@ -281,52 +375,191 @@ public class VistaPrograma extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Familia cicles", jPanel4);
 
-        TextFieldNomModul.setToolTipText("");
-        TextFieldNomModul.addActionListener(new java.awt.event.ActionListener() {
+        btnCrearMatricula5.setText("Crear");
+        btnCrearMatricula5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldNomModulActionPerformed(evt);
+                btnCrearMatricula5ActionPerformed(evt);
             }
         });
 
-        CreaModul.setText("Crear");
-        CreaModul.addActionListener(new java.awt.event.ActionListener() {
+        btnModificarMatricula1.setText("Modificar");
+        btnModificarMatricula1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CreaModulActionPerformed(evt);
+                btnModificarMatricula1ActionPerformed(evt);
             }
         });
+
+        btnEliminarMatricula1.setText("Eliminar");
+        btnEliminarMatricula1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMatricula1ActionPerformed(evt);
+            }
+        });
+
+        btnCercarMatricula1.setText("Cercar");
+        btnCercarMatricula1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCercarMatricula1ActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Nom: ");
+
+        jLabel17.setText("Curs:");
+
+        jLabel18.setText("Cicle:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(TextFieldNomModul, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
-                .addComponent(CreaModul)
-                .addGap(141, 141, 141))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campCognomAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campNomAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campNifAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEliminarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearMatricula5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCercarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldNomModul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CreaModul))
-                .addContainerGap(455, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnCrearMatricula5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(btnModificarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCercarMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campNomAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campCognomAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campNifAlumne1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Moduls", jPanel5);
+
+        btnCrearMatricula2.setText("Crear");
+        btnCrearMatricula2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearMatricula2ActionPerformed(evt);
+            }
+        });
+
+        btnCrearMatricula1.setText("Crear");
+        btnCrearMatricula1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearMatricula1ActionPerformed(evt);
+            }
+        });
+
+        btnCrearMatricula3.setText("Crear");
+        btnCrearMatricula3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearMatricula3ActionPerformed(evt);
+            }
+        });
+
+        btnCrearMatricula4.setText("Crear");
+        btnCrearMatricula4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearMatricula4ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Nom: ");
+
+        jLabel13.setText("Hores:");
+
+        jLabel14.setText("Curs: ");
+
+        jLabel15.setText("Modul:");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campalumneMatricula4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campalumneMatricula3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campalumneMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campalumneMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCrearMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearMatricula3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCrearMatricula4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 517, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campalumneMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campalumneMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campalumneMatricula3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campalumneMatricula4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCrearMatricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCrearMatricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCrearMatricula3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCrearMatricula4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Unitat formativa", jPanel6);
@@ -710,13 +943,53 @@ public class VistaPrograma extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarFamiliaActionPerformed
 
-    private void TextFieldNomModulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNomModulActionPerformed
+    private void btnCrearMatricula6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldNomModulActionPerformed
+    }//GEN-LAST:event_btnCrearMatricula6ActionPerformed
 
-    private void CreaModulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreaModulActionPerformed
-        
-    }//GEN-LAST:event_CreaModulActionPerformed
+    private void btnModificarMatricula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMatricula2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarMatricula2ActionPerformed
+
+    private void btnEliminarMatricula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMatricula2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarMatricula2ActionPerformed
+
+    private void btnCercarMatricula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCercarMatricula2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCercarMatricula2ActionPerformed
+
+    private void btnCrearMatricula5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearMatricula5ActionPerformed
+
+    private void btnModificarMatricula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMatricula1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarMatricula1ActionPerformed
+
+    private void btnEliminarMatricula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMatricula1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarMatricula1ActionPerformed
+
+    private void btnCercarMatricula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCercarMatricula1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCercarMatricula1ActionPerformed
+
+    private void btnCrearMatricula2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearMatricula2ActionPerformed
+
+    private void btnCrearMatricula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearMatricula1ActionPerformed
+
+    private void btnCrearMatricula3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearMatricula3ActionPerformed
+
+    private void btnCrearMatricula4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearMatricula4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearMatricula4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -755,25 +1028,37 @@ public class VistaPrograma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CreaModul;
-    private javax.swing.JTextField TextFieldNomModul;
     private javax.swing.JButton btnCercarAlumne;
     private javax.swing.JButton btnCercarMatricula;
+    private javax.swing.JButton btnCercarMatricula1;
+    private javax.swing.JButton btnCercarMatricula2;
     private javax.swing.JButton btnCercarTotsAlumne;
     private javax.swing.JButton btnCrearAlumne;
     private javax.swing.JButton btnCrearCicle;
     private javax.swing.JButton btnCrearFamilia;
     private javax.swing.JButton btnCrearMatricula;
+    private javax.swing.JButton btnCrearMatricula1;
+    private javax.swing.JButton btnCrearMatricula2;
+    private javax.swing.JButton btnCrearMatricula3;
+    private javax.swing.JButton btnCrearMatricula4;
+    private javax.swing.JButton btnCrearMatricula5;
+    private javax.swing.JButton btnCrearMatricula6;
     private javax.swing.JButton btnEliminarAlumne;
     private javax.swing.JButton btnEliminarCicle;
     private javax.swing.JButton btnEliminarFamilia;
     private javax.swing.JButton btnEliminarMatricula;
+    private javax.swing.JButton btnEliminarMatricula1;
+    private javax.swing.JButton btnEliminarMatricula2;
     private javax.swing.JButton btnModificarAlumne;
     private javax.swing.JButton btnModificarCicle;
     private javax.swing.JButton btnModificarFamilia;
     private javax.swing.JButton btnModificarMatricula;
+    private javax.swing.JButton btnModificarMatricula1;
+    private javax.swing.JButton btnModificarMatricula2;
     private javax.swing.JTextField campCercaAlumnes;
+    private javax.swing.JTextField campCicleCurs;
     private javax.swing.JTextField campCognomAlumne;
+    private javax.swing.JTextField campCognomAlumne1;
     private javax.swing.JTextField campCorreuAlumne;
     private javax.swing.JTextField campDataMatricula;
     private javax.swing.JTextField campDescompteMatricula;
@@ -782,16 +1067,32 @@ public class VistaPrograma extends javax.swing.JFrame {
     private javax.swing.JTextField campModalitatMatricula;
     private javax.swing.JTextField campNif1;
     private javax.swing.JTextField campNifAlumne;
+    private javax.swing.JTextField campNifAlumne1;
     private javax.swing.JTextField campNomAlumne;
+    private javax.swing.JTextField campNomAlumne1;
     private javax.swing.JTextField campNomCicle;
     private javax.swing.JTextField campNomCicle3;
+    private javax.swing.JTextField campNomCurs;
     private javax.swing.JTextField campNomFamilia;
     private javax.swing.JTextField campTelefonAlumne;
     private javax.swing.JTextField campalumneMatricula;
+    private javax.swing.JTextField campalumneMatricula1;
+    private javax.swing.JTextField campalumneMatricula2;
+    private javax.swing.JTextField campalumneMatricula3;
+    private javax.swing.JTextField campalumneMatricula4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

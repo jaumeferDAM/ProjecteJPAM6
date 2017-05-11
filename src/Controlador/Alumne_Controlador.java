@@ -15,12 +15,12 @@ import javax.persistence.Query;
  *
  * @author ALUMNEDAM
  */
-public class Alumne_Controlador extends Generic_Controlador<Alumne>{
+public class Alumne_Controlador extends Generic_Controlador<Alumne> {
 
     public Alumne_Controlador(EntityManager entityManger) {
         super(entityManger);
     }
-    
+
     public Alumne buscarCognom(String cognom) {
         // Recupera el entity manager       
         Query query = em.createNamedQuery("alumneCognom", Alumne.class);
@@ -29,6 +29,6 @@ public class Alumne_Controlador extends Generic_Controlador<Alumne>{
         System.out.println("close");
         em.close();
         return p;
-}
-    
+    }
+
 }
