@@ -16,6 +16,40 @@ import javax.persistence.Persistence;
 public class ProyectoM6UF4 {
 
     public static void main(String[] args) {
+        
+        
+        
+        
+        
+        
+        /**********************************************************************************
+         * 
+         * 
+         * La part grafica esta diseñada pero no funciona. Hi han coses que no hem proba 
+         * perque no funciona bé l'aplicació.
+         * 
+         * ********************************************************************************
+         */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 //        Alumne_Controlador alumneDAO = new Alumne_Controlador();
 //        
 //        Alumne alumne1 = new Alumne("111111", "nom", "cognom", "correu", 555555);
@@ -24,36 +58,36 @@ public class ProyectoM6UF4 {
 //        alumneDAO.actualizar(new Alumne("111111", "Juan", "Alberto", "correu", 555555));
 //        alumneDAO.eliminar(alumne1);
 //        alumneDAO.buscarCognom("Alberto");
-        EntityManager em;
+//        EntityManager em;
 //            EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTE");
 //            em = emf.createEntityManager();
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTE");
-        em = emf.createEntityManager();
-        System.out.println(em);
-        Date d = new Date(2000, 3, 34);
-        
-        //importe i1 = new importe(0L, 0, null);
-        
-        Alumne a1 = new Alumne("pruebadeInsercionDos", "ffff", "ffff", "fffff", 333);
-        
-        Matricula m1 = new Matricula();
+//
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PROYECTE");
+//        em = emf.createEntityManager();
+//        System.out.println(em);
+//        Date d = new Date(2000, 3, 34);
+//        
+//        importe i1 = new importe(0L, 0, null);
+//        
+//        Alumne a1 = new Alumne("pruebadeInsercionDos", "ffff", "ffff", "fffff", 333);
+//        
+//        Matricula m1 = new Matricula();
 //        i1.setMatricula(m1);
-       
-        m1.setData(d);
-        m1.setIdAlumne(a1);
-        m1.setDescompte("0");
-        m1.setModalitat("a");
-        a1.setMatriculaId(m1);
-
-        Alumne_Controlador acontrol = new Alumne_Controlador(em);
-        Matricula_Controlador mcontrol  = new Matricula_Controlador(em);
+//       
+//        m1.setData(d);
+//        m1.setIdAlumne(a1);
+//        m1.setDescompte("0");
+//        m1.setModalitat("a");
+//        a1.setMatriculaId(m1);
+//
+//        Alumne_Controlador acontrol = new Alumne_Controlador(em);
+//        Matricula_Controlador mcontrol  = new Matricula_Controlador(em);
 //        Modul m = new Modul(0L, "PRUEBAGRABAR", "UNO", cicle)
-          Cicle c = new Cicle(0L, "PRUEBA", "DADA", null);
-          Cicle_Controlador cControl = new Cicle_Controlador(em);
+//          Cicle c = new Cicle(0L, "PRUEBA", "DADA", null);
+//          Cicle_Controlador cControl = new Cicle_Controlador(em);
 //          cControl.Insertar(c);
 //        mcontrol.Insertar(m1);
-        acontrol.Insertar(a1);
+//        acontrol.Insertar(a1);
     }
 
 }
