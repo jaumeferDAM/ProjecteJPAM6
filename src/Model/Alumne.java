@@ -36,6 +36,7 @@ public class Alumne implements Serializable{
     @Column(name = "telefon", length = 11)
     private int telefon;
     
+    //un alumne només pot tenir una matricula.
     @OneToOne(mappedBy = "idAlumne", cascade=CascadeType.MERGE)
      private Matricula idMatricula;
 

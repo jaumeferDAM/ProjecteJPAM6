@@ -45,6 +45,7 @@ public class Matricula implements Serializable{
     @Column(name = "idMatricula", unique = true, nullable = false)
     private Long idMatricula;/////
     
+    //Cada alumne només pot tenir una matricula.
     @OneToOne()
     @JoinColumn(name = "idAlumne")
     private Alumne idAlumne;
@@ -60,6 +61,7 @@ public class Matricula implements Serializable{
     @Embedded
     private importe idImport;
     
+    //Una matricula pot tenir diverses unitats formatives.
     @ManyToMany(mappedBy = "listaMatriculas", cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     private List<UnitatFormativa> listaUF;
 

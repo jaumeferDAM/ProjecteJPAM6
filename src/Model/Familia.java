@@ -34,7 +34,7 @@ public class Familia implements Serializable {
     @Column(name = "nomFamilia", nullable = false, length = 20 )
     private String nom;
     
-    
+    //Una familia te diversos cicles pero cada cicle es d'una familia.
     @OneToMany(mappedBy = "familia", cascade = CascadeType.ALL)
     private List<Cicle> llistaCicles;
 

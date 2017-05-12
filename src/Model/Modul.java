@@ -38,13 +38,16 @@ public class Modul implements Serializable{
     @Column(name = "nomModul", length = 50, nullable = false)
     private String nom;
     
-     @OneToMany(mappedBy = "modul", cascade = CascadeType.ALL)
+    //Cada modul te diverses unitats formatives pero les nitats formatives pertanyen a un sol modul.
+    @OneToMany(mappedBy = "modul", cascade = CascadeType.ALL)
     private List<UnitatFormativa> llistaUF;
 
+    //Un curs te diversos moduls pero cada modul es d'un sol curs.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCurs")
     private Curs curs;
 
+    //Un cicle conté diversos moduls pero cada modul pertany a un sol cicle.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCicle")
     private Cicle cicle;

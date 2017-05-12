@@ -33,13 +33,16 @@ public class UnitatFormativa implements Serializable{
     @Column(name = "horesUnitatFormativa", nullable = false)
     private String hores;
 
+    //Una matricula té diverses unitats formatives.
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     private List<Matricula> listaMatriculas;
 
+    //Un curs te diverses unitats formatives.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCurs")
     private Curs curs;
 
+    //un modul te diverses unitats formatives pero aquestes nomes un modul.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idModul")
     private Modul modul;

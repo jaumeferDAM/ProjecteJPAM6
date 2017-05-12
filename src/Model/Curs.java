@@ -35,13 +35,16 @@ public class Curs implements Serializable{
     @Column(name = "nomCurs", length = 5)
     private String nom;
     
+    //un curs té diverses unitaqts formatives pero cada unitat formativa pertanya un sol curs.
     @OneToMany(mappedBy = "curs")
     private List<UnitatFormativa> listaUF;
     
+    //Un cicle te diversos cursos pero cada curs pertany a un sol cicle.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idCicle")
     private Cicle cicle;
     
+    //un curs pot tenir diversos moduls, pero cada modul pertany a un sol curs.
     @OneToMany (mappedBy = "curs", cascade = CascadeType.ALL)
     private List<Modul> llistaModuls;
 

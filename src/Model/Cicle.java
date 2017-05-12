@@ -41,12 +41,15 @@ public class Cicle implements Serializable{
     @Column(name = "grauCicle", length = 50)
     private String grau;
     
+    //Un cile pot tenir mes d'un curs pero cada curs pertany a un sol cicle.
     @OneToMany(mappedBy="cicle", cascade = CascadeType.ALL)
     private List<Curs> llistaCursos;
     
+    //Un cicle pot tenir diversos moduls pero cada modul pertany a un cicle.
     @OneToMany(mappedBy="cicle" , cascade = CascadeType.ALL)
     private List<Modul> llistaModuls;
     
+    //una familia pot tenir diversos cicles pero cada cicle només pertany a una familia.
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idFamilia")
     private Familia familia;
