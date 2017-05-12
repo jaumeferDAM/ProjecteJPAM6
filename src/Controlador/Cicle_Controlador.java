@@ -15,6 +15,11 @@ public class Cicle_Controlador extends Generic_Controlador {
         super(entityManager);
     }
 
+    /**
+     * Metode per a realitzar la busca cursos de un cicle mitjançant una id.
+     * @param id
+     * @return 
+     */
     public List<Curs> BuscarCursosCicle(Long id) {
         List<Curs> p = null;
         try {
@@ -33,6 +38,11 @@ public class Cicle_Controlador extends Generic_Controlador {
         return p;
     }
 
+    /**
+     * Metode per a realitzar la busca els moduls de un cicle mitjançant id.
+     * @param id
+     * @return 
+     */
     public List<Modul> BuscarModulsCicle(Long id) {
         List<Modul> p = null;
         try {

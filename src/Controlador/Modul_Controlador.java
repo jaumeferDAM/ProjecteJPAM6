@@ -15,7 +15,12 @@ public class Modul_Controlador extends Generic_Controlador{
    public Modul_Controlador(EntityManager entityManger) {
         super(entityManger);
     }
-    
+    /**
+     * Metode per a realitzar la busca de les unitats formatives d'un cicle mitjançant
+     * ID.
+     * @param id
+     * @return 
+     */
     public List<UnitatFormativa> BuscarCursosCicle(Long id) {
         List<UnitatFormativa> p = null;
         try{

@@ -15,7 +15,11 @@ public class Familia_Controlador extends Generic_Controlador{
     public Familia_Controlador(EntityManager entityManger) {
         super(entityManger);
     }
-    
+    /**
+     * Metode per a realitzar la busca de Families mitjançant id.
+     * @param id
+     * @return 
+     */
     public List<Cicle> BuscarPerFamilia(Long id) { 
         List<Cicle> p = null;
         try{

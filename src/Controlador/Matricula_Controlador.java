@@ -15,7 +15,10 @@ public class Matricula_Controlador extends Generic_Controlador{
    public Matricula_Controlador(EntityManager entityManger) {
         super(entityManger);
     }
-    
+    /**
+     * Metode per a realitzar la busca de matricules mitjançant el nif de l'alumne.
+     * @param nif 
+     */
     public void BuscarMatricula(String nif){
         Matricula p = null;
         try{

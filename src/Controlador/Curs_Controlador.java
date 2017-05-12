@@ -17,6 +17,11 @@ public class Curs_Controlador extends Generic_Controlador{
         super(entityManger);
     }
 
+    /**
+     * Metode per a realitzar la busca de unitats formatives de un curs.
+     * @param id
+     * @return 
+     */
     public List<UnitatFormativa> BuscarUFCurs(Long id) {
         List<UnitatFormativa> p = null;
         try{
@@ -34,6 +39,11 @@ public class Curs_Controlador extends Generic_Controlador{
         return p;
     }
     
+    /**
+     * Metode per a realitzar la busca dels moduls d'un curs.
+     * @param id
+     * @return 
+     */
     public List<Modul> BuscarModulsCurs(Long id) {
         List<Modul> p = null;
         try{

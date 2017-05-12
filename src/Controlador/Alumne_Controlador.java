@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controlador;
 
 import Excepcions.ExcepcionAlumno;
@@ -12,16 +8,18 @@ import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-/**
- *
- * @author ALUMNEDAM
- */
+
 public class Alumne_Controlador extends Generic_Controlador<Alumne> {
 
     public Alumne_Controlador(EntityManager entityManger) {
         super(entityManger);
     }
 
+    /**
+     * Metode per a realitzar la busca d'alumnes mitjançant el cognom.
+     * @param cognom
+     * @return 
+     */
     public Alumne buscarCognom(String cognom) {
         Alumne p = null;
         try {
