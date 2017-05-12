@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Excepcions.ExcepcionAlumno;
 import Model.Alumne;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,12 +23,20 @@ public class Alumne_Controlador extends Generic_Controlador<Alumne> {
     }
 
     public Alumne buscarCognom(String cognom) {
-        // Recupera el entity manager       
-        Query query = em.createNamedQuery("alumneCognom", Alumne.class);
-        query.setParameter("cognom", cognom);
-        Alumne p = (Alumne) query.getSingleResult();
-        System.out.println("close");
-        em.close();
+        Alumne p = null;
+        try {
+            // Recupera el entity manager       
+            Query query = em.createNamedQuery("alumneCognom", Alumne.class);
+            query.setParameter("cognom", cognom);
+            p = (Alumne) query.getSingleResult();
+            System.out.println("close");
+            em.close();
+            if (p == null) {
+                throw new ExcepcionAlumno("COG");
+            }
+        } catch (ExcepcionAlumno ex) {
+            System.out.println(ex.getMessage());
+        }
         return p;
     }
 

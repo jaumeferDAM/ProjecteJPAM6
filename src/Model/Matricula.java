@@ -22,12 +22,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 
 @Entity
+//@NamedQueries({
+//@NamedQuery(name = "nifMatricula", query = "SELECT p FROM Matricula p WHERE p.alumneId.nif=:nif"), 
+//@NamedQuery(name = "alumneUFMatricula", query = "SELECT u.alumneId FROM Matricula u, UnitatFormativa p WHERE p in (:id)"),
+//@NamedQuery(name = "ufsMatricula", query = "SELECT u FROM UnitatFormativa u, Matricula m WHERE m.id=:id")}) 
+
 @Table(name = "matricula")
 public class Matricula implements Serializable{
     
