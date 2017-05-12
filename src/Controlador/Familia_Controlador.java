@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Excepcions.ExcepcionFamilia;
 import Model.Cicle;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,13 +16,21 @@ public class Familia_Controlador extends Generic_Controlador{
         super(entityManger);
     }
     
-    public List<Cicle> BuscarPerFamilia(Long id) {      
+    public List<Cicle> BuscarPerFamilia(Long id) { 
+        List<Cicle> p = null;
+        try{
         System.out.println("Busqueda per id");
         Query query = em.createNamedQuery("cercaCiclesFamilia", Cicle.class);
         query.setParameter("id", id);
-        List<Cicle> p = (List<Cicle>) query.getResultList();
+        p = (List<Cicle>) query.getResultList();
+        System.out.println("close");
         System.out.println(p.size());
-        System.out.println("close sunormah");        
+            if (p == null || p.isEmpty()) {
+                throw new ExcepcionFamilia("GOC");
+            }
+        }catch(ExcepcionFamilia ex){
+            System.out.println(ex.getMessage());
+        }
         return p;
     }
     

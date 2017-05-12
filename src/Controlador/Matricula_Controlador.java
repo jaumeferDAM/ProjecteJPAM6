@@ -22,7 +22,7 @@ public class Matricula_Controlador extends Generic_Controlador{
             Query query = em.createNamedQuery("nifMatricula", Matricula.class);
             query.setParameter("nif", nif);
             p = (Matricula) query.getSingleResult();
-            
+            System.out.println("close");
             if (p == null) {
                 throw new ExcepcionMatricula("COG");
             }

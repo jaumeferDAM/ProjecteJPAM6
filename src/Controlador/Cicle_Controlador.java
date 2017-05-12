@@ -23,7 +23,8 @@ public class Cicle_Controlador extends Generic_Controlador {
             query.setParameter("id", id);
             p = (List<Curs>) query.getResultList();
             System.out.println(p.size());
-            if (p == null) {
+            System.out.println("close");
+            if (p == null || p.isEmpty()) {
                 throw new ExcepcionCicle("COG");
             }
         } catch (ExcepcionCicle ex) {
@@ -40,7 +41,7 @@ public class Cicle_Controlador extends Generic_Controlador {
             query.setParameter("id", id);
             p = (List<Modul>) query.getResultList();
             System.out.println(p.size());
-            if (p == null) {
+            if (p == null || p.isEmpty()) {
                 throw new ExcepcionCicle("COG");
             }
         } catch (ExcepcionCicle ex) {
