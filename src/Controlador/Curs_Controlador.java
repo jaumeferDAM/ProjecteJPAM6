@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Excepcions.ExcepcionCurs;
 import Model.Modul;
 import Model.UnitatFormativa;
 import java.io.Serializable;
@@ -17,10 +18,18 @@ public class Curs_Controlador extends Generic_Controlador{
     }
 
     public List<UnitatFormativa> BuscarUFCurs(Long id) {
+        List<UnitatFormativa> p = null;
+        try{
         System.out.println("Busqueda per id");
         Query query = em.createNamedQuery("cercaUFCurs", UnitatFormativa.class);
         query.setParameter("id", id);
-        List<UnitatFormativa> p = (List<UnitatFormativa>) query.getResultList();
+        p = (List<UnitatFormativa>) query.getResultList();
+            if (p == null) {
+                throw new ExcepcionCurs("COG");
+            }
+        }catch(ExcepcionCurs ex){
+            System.out.println(ex.getMessage());
+        }
         return p;
     }
     
