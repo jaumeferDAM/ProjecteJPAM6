@@ -9,7 +9,7 @@ public class ExcepcionFamilia extends Exception{
         super(message);
         if (message.equals("Familia")) {
             mensaje = "Familia no trobat.";
-        }else if(message.equals("COG")){
+        }else if(message.equals("fallo")){
             mensaje = "No s'han trobat families.";
         }
     }

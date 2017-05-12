@@ -24,7 +24,7 @@ public class Matricula_Controlador extends Generic_Controlador{
             p = (Matricula) query.getSingleResult();
             System.out.println("close");
             if (p == null) {
-                throw new ExcepcionMatricula("COG");
+                throw new ExcepcionMatricula("fallo");
             }
         }catch(ExcepcionMatricula ex){
             ex.getMessage();

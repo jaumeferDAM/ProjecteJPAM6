@@ -9,7 +9,7 @@ public class ExcepcionModul extends Exception{
         super(message);
         if (message.equals("modul")) {
             mensaje = "modul error";
-        }else if(message.equals("COG")){
+        }else if(message.equals("fallo")){
             mensaje = "No s'han trobat el modul.";
         }
     }

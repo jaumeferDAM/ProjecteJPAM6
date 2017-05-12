@@ -9,7 +9,7 @@ public class ExcepcionCicle extends Exception{
         super(message);
         if (message.equals("cicle")) {
             mensaje = "Cicle no trobat.";
-        }else if(message.equals("COG")){
+        }else if(message.equals("fallo")){
             mensaje = "No s'han trobat cicles.";
         }
     }

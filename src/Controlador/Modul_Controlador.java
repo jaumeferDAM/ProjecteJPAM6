@@ -25,7 +25,7 @@ public class Modul_Controlador extends Generic_Controlador{
         p = (List<UnitatFormativa>) query.getResultList();
         System.out.println(p.size());
             if (p == null || p.isEmpty()) {
-                throw new ExcepcionModul("GOC");
+                throw new ExcepcionModul("fallo");
             }
         }catch(ExcepcionModul ex){
             System.out.println(ex.getMessage());

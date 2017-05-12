@@ -9,7 +9,7 @@ public class ExcepcionMatricula extends Exception{
         super(message);
         if (message.equals("matricula")) {
             mensaje = "Matricula error";
-        }else if(message.equals("COG")){
+        }else if(message.equals("fallo")){
             mensaje = "No s'han trobat la matricula.";
         }
     }

@@ -26,7 +26,7 @@ public class Curs_Controlador extends Generic_Controlador{
         System.out.println("close");
         p = (List<UnitatFormativa>) query.getResultList();
             if (p == null || p.isEmpty()) {
-                throw new ExcepcionCurs("COG");
+                throw new ExcepcionCurs("fallo");
             }
         }catch(ExcepcionCurs ex){
             System.out.println(ex.getMessage());

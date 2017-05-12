@@ -9,7 +9,7 @@ public class ExcepcionAlumno extends Exception{
         super(message);
         if (message.equals("NIF")) {
             mensaje = "NIF no trobat.";
-        }else if(message.equals("COG")){
+        }else if(message.equals("fallo")){
             mensaje = "No s'han trobat alumnes.";
         }
     }

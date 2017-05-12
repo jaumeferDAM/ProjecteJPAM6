@@ -26,7 +26,7 @@ public class Familia_Controlador extends Generic_Controlador{
         System.out.println("close");
         System.out.println(p.size());
             if (p == null || p.isEmpty()) {
-                throw new ExcepcionFamilia("GOC");
+                throw new ExcepcionFamilia("fallo");
             }
         }catch(ExcepcionFamilia ex){
             System.out.println(ex.getMessage());

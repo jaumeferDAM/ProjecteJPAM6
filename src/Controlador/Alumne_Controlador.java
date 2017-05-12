@@ -32,7 +32,7 @@ public class Alumne_Controlador extends Generic_Controlador<Alumne> {
             System.out.println("close");
             em.close();
             if (p == null) {
-                throw new ExcepcionAlumno("COG");
+                throw new ExcepcionAlumno("fallo");
             }
         } catch (ExcepcionAlumno ex) {
             System.out.println(ex.getMessage());

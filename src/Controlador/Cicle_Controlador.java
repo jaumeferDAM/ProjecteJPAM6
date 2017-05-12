@@ -25,7 +25,7 @@ public class Cicle_Controlador extends Generic_Controlador {
             System.out.println(p.size());
             System.out.println("close");
             if (p == null || p.isEmpty()) {
-                throw new ExcepcionCicle("COG");
+                throw new ExcepcionCicle("fallo");
             }
         } catch (ExcepcionCicle ex) {
             System.out.println(ex.getMessage());
